@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the MutableRectangle.new constructor from Class MutableRectangle from the dart:math library, for the Dart programming language.">
+  <title>MutableRectangle.new constructor - MutableRectangle - dart:math library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="dart-math/">dart:math</a></li>
+    <li><a href="dart-math/MutableRectangle-class.html">MutableRectangle<span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span></a></li>
+    <li class="self-crumb">MutableRectangle.new constructor</li>
+  </ol>
+  <div class="self-name">MutableRectangle.new</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="dart-math&#47;MutableRectangle-class-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-constructor">MutableRectangle&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span> constructor 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+      <span class="name ">MutableRectangle&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="-param-left"><span class="type-annotation">T</span> <span class="parameter-name">left</span>, </span></li>
+<li><span class="parameter" id="-param-top"><span class="type-annotation">T</span> <span class="parameter-name">top</span>, </span></li>
+<li><span class="parameter" id="-param-width"><span class="type-annotation">T</span> <span class="parameter-name">width</span>, </span></li>
+<li><span class="parameter" id="-param-height"><span class="type-annotation">T</span> <span class="parameter-name">height</span>, </span></li>
+</ol>)
+    </section>
+    
+<section class="desc markdown">
+  <p>Create a mutable rectangle spanned by <code>(left, top)</code> and
+<code>(left+width, top+height)</code>.</p>
+<p>The rectangle contains the points
+with x-coordinate between <code>left</code> and <code>left + width</code>, and
+with y-coordinate between <code>top</code> and <code>top + height</code>, both inclusive.</p>
+<p>The <code>width</code> and <code>height</code> should be non-negative.
+If <code>width</code> or <code>height</code> are negative, they are clamped to zero.</p>
+<p>If <code>width</code> and <code>height</code> are zero, the "rectangle" comprises only the
+single point <code>(left, top)</code>.</p>
+<p>Example:</p>
+<pre class="language-dart"><code class="language-dart">var rectangle = MutableRectangle(20, 50, 300, 600);
+print(rectangle); // Rectangle (20, 50) 300 x 600
+print(rectangle.left); // 20
+print(rectangle.top); // 50
+print(rectangle.right); // 320
+print(rectangle.bottom); // 650
+
+// Change rectangle width and height.
+rectangle.width = 200;
+rectangle.height = 100;
+
+print(rectangle); // Rectangle (20, 50) 200 x 100
+print(rectangle.left); // 20
+print(rectangle.top); // 50
+print(rectangle.right); // 220
+print(rectangle.bottom); // 150
+</code></pre>
+<p><strong>Legacy:</strong> New usages of <a href="dart-math/MutableRectangle-class.html">MutableRectangle</a> are discouraged.
+To learn more, check out the <a href="dart-math/MutableRectangle-class.html">MutableRectangle</a> class API docs.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">MutableRectangle(this.left, this.top, T width, T height)
+  : this._width = (width &lt; 0)
+        ? _clampToZero&lt;T&gt;(width)
+        : (width + 0 as dynamic),
+    this._height = (height &lt; 0)
+        ? _clampToZero&lt;T&gt;(height)
+        : (height + 0 as dynamic);</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="dart-math/">dart:math</a></li>
+    <li><a href="dart-math/MutableRectangle-class.html">MutableRectangle<span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span></a></li>
+    <li class="self-crumb">MutableRectangle.new constructor</li>
+</ol>
+
+    <h5>MutableRectangle class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

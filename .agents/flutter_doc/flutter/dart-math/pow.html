@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the pow function from the dart:math library, for the Dart programming language.">
+  <title>pow function - dart:math library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="dart-math/">dart:math</a></li>
+    <li class="self-crumb">pow function</li>
+  </ol>
+  <div class="self-name">pow</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="dart-math&#47;dart-math-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">pow</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype"><a href="dart-core/num-class.html">num</a></span>
+<span class="name ">pow</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="pow-param-x"><span class="type-annotation"><a href="dart-core/num-class.html">num</a></span> <span class="parameter-name">x</span>, </span></li>
+<li><span class="parameter" id="pow-param-exponent"><span class="type-annotation"><a href="dart-core/num-class.html">num</a></span> <span class="parameter-name">exponent</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Returns <code>x</code> to the power of <code>exponent</code>.</p>
+<p>If <code>x</code> is an <a href="dart-core/int-class.html">int</a> and <code>exponent</code> is a non-negative <a href="dart-core/int-class.html">int</a>, the result is
+an <a href="dart-core/int-class.html">int</a>, otherwise both arguments are converted to doubles first, and the
+result is a <a href="dart-core/double-class.html">double</a>.</p>
+<p>For integers, the power is always equal to the mathematical result of <code>x</code> to
+the power <code>exponent</code>, only limited by the available memory.</p>
+<p>For doubles, <code>pow(x, y)</code> handles edge cases as follows:</p>
+<ul>
+<li>if <code>y</code> is zero (0.0 or -0.0), the result is always 1.0.</li>
+<li>if <code>x</code> is 1.0, the result is always 1.0.</li>
+<li>otherwise, if either <code>x</code> or <code>y</code> is NaN, then the result is NaN.</li>
+<li>if <code>x</code> is negative (but not -0.0) and <code>y</code> is a finite non-integer, the
+result is NaN.</li>
+<li>if <code>x</code> is Infinity and <code>y</code> is negative, the result is 0.0.</li>
+<li>if <code>x</code> is Infinity and <code>y</code> is positive, the result is Infinity.</li>
+<li>if <code>x</code> is 0.0 and <code>y</code> is negative, the result is Infinity.</li>
+<li>if <code>x</code> is 0.0 and <code>y</code> is positive, the result is 0.0.</li>
+<li>if <code>x</code> is -Infinity or -0.0 and <code>y</code> is an odd integer, then the result is
+<code>-pow(-x ,y)</code>.</li>
+<li>if <code>x</code> is -Infinity or -0.0 and <code>y</code> is not an odd integer, then the result
+is the same as <code>pow(-x , y)</code>.</li>
+<li>if <code>y</code> is Infinity and the absolute value of <code>x</code> is less than 1, the
+result is 0.0.</li>
+<li>if <code>y</code> is Infinity and <code>x</code> is -1, the result is 1.0.</li>
+<li>if <code>y</code> is Infinity and the absolute value of <code>x</code> is greater than 1,
+the result is Infinity.</li>
+<li>if <code>y</code> is -Infinity, the result is <code>1/pow(x, Infinity)</code>.</li>
+</ul>
+<p>This corresponds to the <code>pow</code> function defined in the IEEE Standard
+754-2008.</p>
+<p>Notice that the result may overflow. If integers are represented as 64-bit
+numbers, an integer result may be truncated, and a double result may
+overflow to positive or negative <a href="dart-core/double/infinity-constant.html">double.infinity</a>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">external num pow(num x, num exponent);</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="dart-math/">dart:math</a></li>
+    <li class="self-crumb">pow function</li>
+</ol>
+
+    <h5>dart:math library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

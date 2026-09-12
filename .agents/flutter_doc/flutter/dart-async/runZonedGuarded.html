@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the runZonedGuarded function from the dart:async library, for the Dart programming language.">
+  <title>runZonedGuarded function - dart:async library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="dart-async/">dart:async</a></li>
+    <li class="self-crumb">runZonedGuarded&lt;<wbr><span class="type-parameter">R</span>&gt; function</li>
+  </ol>
+  <div class="self-name">runZonedGuarded</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="dart-async&#47;dart-async-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">runZonedGuarded&lt;<wbr><span class="type-parameter">R</span>&gt;</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype">R?</span>
+<span class="name ">runZonedGuarded</span>&lt;<wbr><span class="type-parameter">R</span>&gt;(<wbr><ol class="parameter-list"> <li><span class="parameter" id="runZonedGuarded-param-body"><span class="type-annotation">R</span> <span class="parameter-name">body</span>(), </span></li>
+<li><span class="parameter" id="runZonedGuarded-param-onError"><span class="type-annotation">void</span> <span class="parameter-name">onError</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="onError-param-error"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a></span> <span class="parameter-name">error</span>, </span></li>
+<li><span class="parameter" id="onError-param-stack"><span class="type-annotation"><a href="dart-core/StackTrace-class.html">StackTrace</a></span> <span class="parameter-name">stack</span></span></li>
+</ol>), {</span></li>
+<li><span class="parameter" id="runZonedGuarded-param-zoneValues"><span class="type-annotation"><a href="dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/Object-class.html">Object</a>?</span>, <span class="type-parameter"><a href="dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">zoneValues</span>, </span></li>
+<li><span class="parameter" id="runZonedGuarded-param-zoneSpecification"><span class="type-annotation"><a href="dart-async/ZoneSpecification-class.html">ZoneSpecification</a>?</span> <span class="parameter-name">zoneSpecification</span>, </span></li>
+</ol>})
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Runs <code>body</code> in its own error zone.</p>
+<p>Creates a new zone using <a href="dart-async/Zone/fork.html">Zone.fork</a> based on <code>zoneSpecification</code> and
+<code>zoneValues</code>, then runs <code>body</code> in that zone and returns the result.</p>
+<p>The <code>onError</code> function is used <em>both</em> to handle asynchronous errors
+by overriding <a href="dart-async/ZoneSpecification/handleUncaughtError.html">ZoneSpecification.handleUncaughtError</a> in <code>zoneSpecification</code>,
+if any, <em>and</em> to handle errors thrown synchronously by the call to <code>body</code>.</p>
+<p>If an error occurs synchronously in <code>body</code>,
+then throwing in the <code>onError</code> handler
+makes the call to <code>runZonedGuarded</code> throw that error,
+and otherwise the call to <code>runZonedGuarded</code> returns <code>null</code>.</p>
+<p>The created zone will always be an <em>error zone</em>.
+Asynchronous errors in futures never cross zone boundaries between zones
+with a different <a href="dart-async/Zone/errorZone.html">Zone.errorZone</a>.
+A consequence of that behavior can be that a <a href="dart-async/Future-class.html">Future</a> which completes as an
+error in the created zone will seem to never complete when used from a zone
+that belongs to a different error zone.
+Multiple attempts to use the future in a zone where the error is
+inaccessible will cause the error to be reported <em>again</em> in it's original
+error zone.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">R? runZonedGuarded&lt;R&gt;(
+  R body(),
+  void onError(Object error, StackTrace stack), {
+  Map&lt;Object?, Object?&gt;? zoneValues,
+  ZoneSpecification? zoneSpecification,
+}) {
+  _Zone parentZone = Zone._current;
+  HandleUncaughtErrorHandler errorHandler =
+      (
+        Zone self,
+        ZoneDelegate parent,
+        Zone zone,
+        Object error,
+        StackTrace stackTrace,
+      ) {
+        try {
+          parentZone.runBinary(onError, error, stackTrace);
+        } catch (e, s) {
+          if (identical(e, error)) {
+            parent.handleUncaughtError(zone, error, stackTrace);
+          } else {
+            parent.handleUncaughtError(zone, e, s);
+          }
+        }
+      };
+  if (zoneSpecification == null) {
+    zoneSpecification = ZoneSpecification(handleUncaughtError: errorHandler);
+  } else {
+    zoneSpecification = ZoneSpecification.from(
+      zoneSpecification,
+      handleUncaughtError: errorHandler,
+    );
+  }
+  try {
+    return _runZoned&lt;R&gt;(body, zoneValues, zoneSpecification);
+  } catch (error, stackTrace) {
+    onError(error, stackTrace);
+  }
+  return null;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="dart-async/">dart:async</a></li>
+    <li class="self-crumb">runZonedGuarded&lt;<wbr><span class="type-parameter">R</span>&gt; function</li>
+</ol>
+
+    <h5>dart:async library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

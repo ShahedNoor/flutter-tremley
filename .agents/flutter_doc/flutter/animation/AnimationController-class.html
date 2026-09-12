@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the AnimationController class from the animation library, for the Dart programming language.">
+  <title>AnimationController class - animation library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="animation/">animation.dart</a></li>
+    <li class="self-crumb">AnimationController class</li>
+  </ol>
+  <div class="self-name">AnimationController</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="animation&#47;animation-library-sidebar.html"
+    data-below-sidebar="animation&#47;AnimationController-class-sidebar.html">
+    <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://github.com/flutter/flutter/blob/main/packages/flutter/lib/src/animation/animation_controller.dart#L221"><span class="material-symbols-outlined">description</span></a></div>
+<h1><span class="kind-class">AnimationController</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>A controller for an animation.</p>
+<p>This class lets you perform tasks such as:</p>
+<ul>
+<li>Play an animation <a href="animation/AnimationController/forward.html">forward</a> or in <a href="animation/AnimationController/reverse.html">reverse</a>, or <a href="animation/AnimationController/stop.html">stop</a> an animation.</li>
+<li>Set the animation to a specific <a href="animation/AnimationController/value.html">value</a>.</li>
+<li>Define the <a href="animation/AnimationController/upperBound.html">upperBound</a> and <a href="animation/AnimationController/lowerBound.html">lowerBound</a> values of an animation.</li>
+<li>Create a <a href="animation/AnimationController/fling.html">fling</a> animation effect using a physics simulation.</li>
+</ul>
+<p>By default, an <a href="animation/AnimationController-class.html">AnimationController</a> linearly produces values that range
+from 0.0 to 1.0, during a given duration.</p>
+<p>When the animation is actively animating, the animation controller generates
+a new value each time the device running your app is ready to display a new
+frame (typically, this rate is around 60–120 values per second).
+If the animation controller is associated with a <a href="widgets/State-class.html">State</a>
+through a <a href="scheduler/TickerProvider-class.html">TickerProvider</a>, then its updates will be silenced when that
+<a href="widgets/State-class.html">State</a>'s subtree is disabled as defined by <a href="widgets/TickerMode-class.html">TickerMode</a>; time will still
+elapse, and methods like <a href="animation/AnimationController/forward.html">forward</a> and <a href="animation/AnimationController/stop.html">stop</a> can still be called and
+will change the value, but the controller will not generate new values
+on its own.</p>
+<h2 id="ticker-providers">Ticker providers</h2>
+<p>An <a href="animation/AnimationController-class.html">AnimationController</a> needs a <a href="scheduler/TickerProvider-class.html">TickerProvider</a>, which is configured using
+the <code>vsync</code> argument on the constructor.
+The constructor uses the <a href="scheduler/TickerProvider-class.html">TickerProvider</a> to create a <a href="scheduler/Ticker-class.html">Ticker</a>, which
+the <a href="animation/AnimationController-class.html">AnimationController</a> uses to step through the animation it controls.</p>
+<p>For advice on obtaining a ticker provider, see <a href="scheduler/TickerProvider-class.html">TickerProvider</a>.
+Typically the relevant <a href="widgets/State-class.html">State</a> serves as the ticker provider,
+after applying a suitable mixin (like <a href="widgets/SingleTickerProviderStateMixin-mixin.html">SingleTickerProviderStateMixin</a>)
+to cause the <a href="widgets/State-class.html">State</a> subclass to implement <a href="scheduler/TickerProvider-class.html">TickerProvider</a>.</p>
+<h2 id="life-cycle">Life cycle</h2>
+<p>An <a href="animation/AnimationController-class.html">AnimationController</a> should be <a href="animation/AnimationController/dispose.html">dispose</a>d when it is no longer needed.
+This reduces the likelihood of leaks. When used with a <a href="widgets/StatefulWidget-class.html">StatefulWidget</a>, it
+is common for an <a href="animation/AnimationController-class.html">AnimationController</a> to be created in the
+<a href="widgets/State/initState.html">State.initState</a> method and then disposed in the <a href="widgets/State/dispose.html">State.dispose</a> method.</p>
+<h2 id="using-futures-with-animationcontroller">Using <a href="dart-async/Future-class.html">Future</a>s with <a href="animation/AnimationController-class.html">AnimationController</a></h2>
+<p>The methods that start animations return a <a href="scheduler/TickerFuture-class.html">TickerFuture</a> object which
+completes when the animation completes successfully, and never throws an
+error; if the animation is canceled, the future never completes. This object
+also has a <a href="scheduler/TickerFuture/orCancel.html">TickerFuture.orCancel</a> property which returns a future that
+completes when the animation completes successfully, and completes with an
+error when the animation is aborted.</p>
+<p>This can be used to write code such as the <code>fadeOutAndUpdateState</code> method
+below.</p>
+<p>
+<a name="animation.AnimationController.1"></a>
+<div class="snippet snippet-container anchor-container">
+  <div class="snippet-description">
+Here is a stateful <code>Foo</code> widget. Its <a href="widgets/State-class.html">State</a> uses the
+<a href="widgets/SingleTickerProviderStateMixin-mixin.html">SingleTickerProviderStateMixin</a> to implement the necessary
+<a href="scheduler/TickerProvider-class.html">TickerProvider</a>, creating its controller in the <a href="widgets/State/initState.html">State.initState</a> method
+and disposing of it in the <a href="widgets/State/dispose.html">State.dispose</a> method. The duration of the
+controller is configured from a property in the <code>Foo</code> widget; as that
+changes, the <a href="widgets/State/didUpdateWidget.html">State.didUpdateWidget</a> method is used to update the
+controller.
+</div>
+  <a class="anchor-button-overlay anchor-button" title="Copy link to clipboard"
+    onmouseenter="fixHref(this, 'animation.AnimationController.1');" onclick="fixHref(this, 'animation.AnimationController.1'); copyStringToClipboard(this.href);"
+    href="#">
+    <i class="material-icons anchor-image">link</i>
+  </a>
+  <div class="copyable-container">
+    <button class="copy-button-overlay copy-button" title="Copy to clipboard"
+      onclick="copyTextToClipboard(findSiblingWithId(this, 'sample-code'));">
+      <i class="material-icons copy-image">content_copy</i>
+    </button>
+    <pre class="language-dart" id="sample-code"><code class="language-dart">class Foo extends StatefulWidget {
+  const Foo({ super.key, required this.duration });
+
+  final Duration duration;
+
+  @override
+  State&lt;Foo&gt; createState() =&gt; _FooState();
+}
+
+class _FooState extends State&lt;Foo&gt; with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this, &#47;&#47; the SingleTickerProviderStateMixin
+      duration: widget.duration,
+    );
+  }
+
+  @override
+  void didUpdateWidget(Foo oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _controller.duration = widget.duration;
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(); &#47;&#47; ...
+  }
+}</code></pre>
+  </div>
+</div>
+</p>
+<p>
+<a name="animation.AnimationController.2"></a>
+<div class="snippet snippet-container anchor-container">
+  <div class="snippet-description">
+The following method (for a <a href="widgets/State-class.html">State</a> subclass) drives two animation
+controllers using Dart's asynchronous syntax for awaiting <a href="dart-async/Future-class.html">Future</a> objects:
+</div>
+  <a class="anchor-button-overlay anchor-button" title="Copy link to clipboard"
+    onmouseenter="fixHref(this, 'animation.AnimationController.2');" onclick="fixHref(this, 'animation.AnimationController.2'); copyStringToClipboard(this.href);"
+    href="#">
+    <i class="material-icons anchor-image">link</i>
+  </a>
+  <div class="copyable-container">
+    <button class="copy-button-overlay copy-button" title="Copy to clipboard"
+      onclick="copyTextToClipboard(findSiblingWithId(this, 'sample-code'));">
+      <i class="material-icons copy-image">content_copy</i>
+    </button>
+    <pre class="language-dart" id="sample-code"><code class="language-dart">Future&lt;void&gt; fadeOutAndUpdateState() async {
+  try {
+    await fadeAnimationController.forward().orCancel;
+    await sizeAnimationController.forward().orCancel;
+    setState(() {
+      dismissed = true;
+    });
+  } on TickerCanceled {
+    &#47;&#47; the animation got canceled, probably because we were disposed
+  }
+}</code></pre>
+  </div>
+</div>
+</p>
+<p>The assumption in the code above is that the animation controllers are being
+disposed in the <a href="widgets/State-class.html">State</a> subclass' override of the <a href="widgets/State/dispose.html">State.dispose</a> method.
+Since disposing the controller cancels the animation (raising a
+<a href="scheduler/TickerCanceled-class.html">TickerCanceled</a> exception), the code here can skip verifying whether
+<a href="widgets/State/mounted.html">State.mounted</a> is still true at each step. (Again, this assumes that the
+controllers are created in <a href="widgets/State/initState.html">State.initState</a> and disposed in
+<a href="widgets/State/dispose.html">State.dispose</a>, as described in the previous section.)</p>
+<p>
+<a name="animation.AnimationController.3"></a>
+<div class="snippet snippet-container anchor-container" id="longSnippet3">
+    <div class="snippet-description">
+This example shows how to use <a href="animation/AnimationController-class.html">AnimationController</a> and
+<a href="widgets/SlideTransition-class.html">SlideTransition</a> to create an animated digit like you might find
+on an old pinball machine our your car's odometer.  New digit
+values slide into place from below, as the old value slides
+upwards and out of view. Taps that occur while the controller is
+already animating cause the controller's
+<a href="animation/AnimationController/duration.html">AnimationController.duration</a> to be reduced so that the visuals
+don't fall behind.
+</div>
+    <a class="anchor-button-overlay anchor-button" title="Copy link to clipboard"
+        onmouseenter="fixHref(this, 'animation.AnimationController.3');" onclick="fixHref(this, 'animation.AnimationController.3'); copyStringToClipboard(this.href);"
+        href="#">
+        <i class="material-icons anchor-image">link</i>
+    </a>
+    <div class="snippet-description">
+        <p>To create a local project with this code sample, run:<br />
+            <span class="snippet-create-command">flutter create --sample=animation.AnimationController.3 mysample</span>
+        </p>
+    </div>
+    <iframe class="snippet-dartpad"
+        src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=animation.AnimationController.3&amp;channel=stable">
+    </iframe>
+</div>
+</p>
+<p>See also:</p>
+<ul>
+<li><a href="animation/Tween-class.html">Tween</a>, the base class for converting an <a href="animation/AnimationController-class.html">AnimationController</a> to a
+range of values of other types.</li>
+</ul>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="dart-core/Object-class.html">Object</a></li>
+        <li><a href="foundation/Listenable-class.html">Listenable</a></li>
+        <li><a href="animation/Animation-class.html">Animation</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/double-class.html">double</a></span>&gt;</span></li>
+      <li>AnimationController</li>
+    </ul>
+  </dd>
+
+        
+        
+  <dt>Mixed-in types</dt>
+  <dd>
+    <ul class="comma-separated clazz-relationships">
+        <li><a href="animation/AnimationEagerListenerMixin-mixin.html">AnimationEagerListenerMixin</a></li>
+        <li><a href="animation/AnimationLocalListenersMixin-mixin.html">AnimationLocalListenersMixin</a></li>
+        <li><a href="animation/AnimationLocalStatusListenersMixin-mixin.html">AnimationLocalStatusListenersMixin</a></li>
+    </ul>
+  </dd>
+
+
+        
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+    <dl class="constructor-summary-list">
+        <dt id="AnimationController.new" class="callable">
+          <span class="name"><a href="animation/AnimationController/AnimationController.html">AnimationController</a></span><span class="signature">({<span class="parameter" id="-param-value"><span class="type-annotation"><a href="dart-core/double-class.html">double</a>?</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="-param-duration"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a>?</span> <span class="parameter-name">duration</span>, </span><span class="parameter" id="-param-reverseDuration"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a>?</span> <span class="parameter-name">reverseDuration</span>, </span><span class="parameter" id="-param-debugLabel"><span class="type-annotation"><a href="dart-core/String-class.html">String</a>?</span> <span class="parameter-name">debugLabel</span>, </span><span class="parameter" id="-param-lowerBound"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">lowerBound</span> = <span class="default-value">0.0</span>, </span><span class="parameter" id="-param-upperBound"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">upperBound</span> = <span class="default-value">1.0</span>, </span><span class="parameter" id="-param-animationBehavior"><span class="type-annotation"><a href="animation/AnimationBehavior.html">AnimationBehavior</a></span> <span class="parameter-name">animationBehavior</span> = <span class="default-value">AnimationBehavior.normal</span>, </span><span class="parameter" id="-param-vsync"><span>required</span> <span class="type-annotation"><a href="scheduler/TickerProvider-class.html">TickerProvider</a></span> <span class="parameter-name">vsync</span></span>})</span>
+        </dt>
+        <dd>
+          Creates an animation controller.
+        </dd>
+        <dt id="AnimationController.unbounded" class="callable">
+          <span class="name"><a href="animation/AnimationController/AnimationController.unbounded.html">AnimationController.unbounded</a></span><span class="signature">({<span class="parameter" id="unbounded-param-value"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">value</span> = <span class="default-value">0.0</span>, </span><span class="parameter" id="unbounded-param-duration"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a>?</span> <span class="parameter-name">duration</span>, </span><span class="parameter" id="unbounded-param-reverseDuration"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a>?</span> <span class="parameter-name">reverseDuration</span>, </span><span class="parameter" id="unbounded-param-debugLabel"><span class="type-annotation"><a href="dart-core/String-class.html">String</a>?</span> <span class="parameter-name">debugLabel</span>, </span><span class="parameter" id="unbounded-param-vsync"><span>required</span> <span class="type-annotation"><a href="scheduler/TickerProvider-class.html">TickerProvider</a></span> <span class="parameter-name">vsync</span>, </span><span class="parameter" id="unbounded-param-animationBehavior"><span class="type-annotation"><a href="animation/AnimationBehavior.html">AnimationBehavior</a></span> <span class="parameter-name">animationBehavior</span> = <span class="default-value">AnimationBehavior.preserve</span></span>})</span>
+        </dt>
+        <dd>
+          Creates an animation controller with no upper or lower bound for its
+value.
+        </dd>
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-properties">
+    <h2>Properties</h2>
+    <dl class="properties">
+        <dt id="animationBehavior" class="property">
+  <span class="name"><a href="animation/AnimationController/animationBehavior.html">animationBehavior</a></span>
+  <span class="signature">&#8594; <a href="animation/AnimationBehavior.html">AnimationBehavior</a></span>
+  
+
+</dt>
+<dd>
+  The behavior of the controller when <a href="dart-ui/AccessibilityFeatures/disableAnimations.html">AccessibilityFeatures.disableAnimations</a>
+is true.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="debugLabel" class="property">
+  <span class="name"><a href="animation/AnimationController/debugLabel.html">debugLabel</a></span>
+  <span class="signature">&#8594; <a href="dart-core/String-class.html">String</a>?</span>
+  
+
+</dt>
+<dd>
+  A label that is used in the <a href="animation/Animation/toString.html">toString</a> output. Intended to aid with
+identifying animation controller instances in debug output.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="duration" class="property">
+  <span class="name"><a href="animation/AnimationController/duration.html">duration</a></span>
+  <span class="signature">&#8596; <a href="dart-core/Duration-class.html">Duration</a>?</span>
+  
+
+</dt>
+<dd>
+  The length of time this animation should last.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="isAnimating" class="property">
+  <span class="name"><a href="animation/AnimationController/isAnimating.html">isAnimating</a></span>
+  <span class="signature">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Whether this animation is currently animating in either the forward or reverse direction.
+  <div class="features"><span class="feature">no setter</span><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="isCompleted" class="property inherited">
+  <span class="name"><a href="animation/Animation/isCompleted.html">isCompleted</a></span>
+  <span class="signature">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  Whether this animation is stopped at the end.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="isDismissed" class="property inherited">
+  <span class="name"><a href="animation/Animation/isDismissed.html">isDismissed</a></span>
+  <span class="signature">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  Whether this animation is stopped at the beginning.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="isForwardOrCompleted" class="property inherited">
+  <span class="name"><a href="animation/Animation/isForwardOrCompleted.html">isForwardOrCompleted</a></span>
+  <span class="signature">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  Whether the current aim of the animation is toward completion.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="lastElapsedDuration" class="property">
+  <span class="name"><a href="animation/AnimationController/lastElapsedDuration.html">lastElapsedDuration</a></span>
+  <span class="signature">&#8594; <a href="dart-core/Duration-class.html">Duration</a>?</span>
+  
+
+</dt>
+<dd>
+  The amount of time that has passed between the time the animation started
+and the most recent tick of the animation.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="lowerBound" class="property">
+  <span class="name"><a href="animation/AnimationController/lowerBound.html">lowerBound</a></span>
+  <span class="signature">&#8594; <a href="dart-core/double-class.html">double</a></span>
+  
+
+</dt>
+<dd>
+  The value at which this animation is deemed to be dismissed.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="reverseDuration" class="property">
+  <span class="name"><a href="animation/AnimationController/reverseDuration.html">reverseDuration</a></span>
+  <span class="signature">&#8596; <a href="dart-core/Duration-class.html">Duration</a>?</span>
+  
+
+</dt>
+<dd>
+  The length of time this animation should last when going in <a href="animation/AnimationController/reverse.html">reverse</a>.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="dart-core/Type-class.html">Type</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="status" class="property">
+  <span class="name"><a href="animation/AnimationController/status.html">status</a></span>
+  <span class="signature">&#8594; <a href="animation/AnimationStatus.html">AnimationStatus</a></span>
+  
+
+</dt>
+<dd>
+  The current status of this animation.
+  <div class="features"><span class="feature">no setter</span><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="upperBound" class="property">
+  <span class="name"><a href="animation/AnimationController/upperBound.html">upperBound</a></span>
+  <span class="signature">&#8594; <a href="dart-core/double-class.html">double</a></span>
+  
+
+</dt>
+<dd>
+  The value at which this animation is deemed to be completed.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="value" class="property">
+  <span class="name"><a href="animation/AnimationController/value.html">value</a></span>
+  <span class="signature">&#8596; <a href="dart-core/double-class.html">double</a></span>
+  
+
+</dt>
+<dd>
+  The current value of the animation.
+  <div class="features"><span class="feature">getter/setter pair</span><span class="feature">override-getter</span></div>
+
+</dd>
+
+        <dt id="velocity" class="property">
+  <span class="name"><a href="animation/AnimationController/velocity.html">velocity</a></span>
+  <span class="signature">&#8594; <a href="dart-core/double-class.html">double</a></span>
+  
+
+</dt>
+<dd>
+  The rate of change of <a href="animation/AnimationController/value.html">value</a> per second.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="view" class="property">
+  <span class="name"><a href="animation/AnimationController/view.html">view</a></span>
+  <span class="signature">&#8594; <a href="animation/Animation-class.html">Animation</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/double-class.html">double</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Returns an <a href="animation/Animation-class.html">Animation&lt;double&gt;</a> for this animation controller, so that a
+pointer to this object can be passed around without allowing users of that
+pointer to mutate the <a href="animation/AnimationController-class.html">AnimationController</a> state.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="addListener" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalListenersMixin/addListener.html">addListener</a></span><span class="signature">(<wbr><span class="parameter" id="addListener-param-listener"><span class="type-annotation"><a href="dart-ui/VoidCallback.html">VoidCallback</a></span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Calls the listener every time the value of the animation changes.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="addStatusListener" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalStatusListenersMixin/addStatusListener.html">addStatusListener</a></span><span class="signature">(<wbr><span class="parameter" id="addStatusListener-param-listener"><span class="type-annotation"><a href="animation/AnimationStatusListener.html">AnimationStatusListener</a></span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Calls listener every time the status of the animation changes.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="animateBack" class="callable">
+  <span class="name"><a href="animation/AnimationController/animateBack.html">animateBack</a></span><span class="signature">(<wbr><span class="parameter" id="animateBack-param-target"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">target</span>, {</span><span class="parameter" id="animateBack-param-duration"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a>?</span> <span class="parameter-name">duration</span>, </span><span class="parameter" id="animateBack-param-curve"><span class="type-annotation"><a href="animation/Curve-class.html">Curve</a></span> <span class="parameter-name">curve</span> = <span class="default-value">Curves.linear</span></span>})
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drives the animation from its current value to the given target, "backward".
+  
+
+</dd>
+
+        <dt id="animateBackWith" class="callable">
+  <span class="name"><a href="animation/AnimationController/animateBackWith.html">animateBackWith</a></span><span class="signature">(<wbr><span class="parameter" id="animateBackWith-param-simulation"><span class="type-annotation"><a href="physics/Simulation-class.html">Simulation</a></span> <span class="parameter-name">simulation</span></span>)
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drives the animation according to the given simulation with a <a href="animation/AnimationController/status.html">status</a> of
+<a href="animation/AnimationStatus.html">AnimationStatus.reverse</a>.
+  
+
+</dd>
+
+        <dt id="animateTo" class="callable">
+  <span class="name"><a href="animation/AnimationController/animateTo.html">animateTo</a></span><span class="signature">(<wbr><span class="parameter" id="animateTo-param-target"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">target</span>, {</span><span class="parameter" id="animateTo-param-duration"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a>?</span> <span class="parameter-name">duration</span>, </span><span class="parameter" id="animateTo-param-curve"><span class="type-annotation"><a href="animation/Curve-class.html">Curve</a></span> <span class="parameter-name">curve</span> = <span class="default-value">Curves.linear</span></span>})
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drives the animation from its current value to the given target, "forward".
+  
+
+</dd>
+
+        <dt id="animateWith" class="callable">
+  <span class="name"><a href="animation/AnimationController/animateWith.html">animateWith</a></span><span class="signature">(<wbr><span class="parameter" id="animateWith-param-simulation"><span class="type-annotation"><a href="physics/Simulation-class.html">Simulation</a></span> <span class="parameter-name">simulation</span></span>)
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drives the animation according to the given simulation.
+  
+
+</dd>
+
+        <dt id="clearListeners" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalListenersMixin/clearListeners.html">clearListeners</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes all listeners added with <a href="animation/AnimationLocalListenersMixin/addListener.html">addListener</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clearStatusListeners" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalStatusListenersMixin/clearStatusListeners.html">clearStatusListeners</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes all listeners added with <a href="animation/AnimationLocalStatusListenersMixin/addStatusListener.html">addStatusListener</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="didRegisterListener" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalStatusListenersMixin/didRegisterListener.html">didRegisterListener</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Called immediately before a status listener is added via <a href="animation/AnimationLocalStatusListenersMixin/addStatusListener.html">addStatusListener</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="didUnregisterListener" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalStatusListenersMixin/didUnregisterListener.html">didUnregisterListener</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Called immediately after a status listener is removed via <a href="animation/AnimationLocalStatusListenersMixin/removeStatusListener.html">removeStatusListener</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="dispose" class="callable">
+  <span class="name"><a href="animation/AnimationController/dispose.html">dispose</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Release the resources used by this object. The object is no longer usable
+after this method is called.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="drive" class="callable inherited">
+  <span class="name"><a href="animation/Animation/drive.html">drive</a></span><span class="signature">&lt;<wbr><span class="type-parameter">U</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="drive-param-child"><span class="type-annotation"><a href="animation/Animatable-class.html">Animatable</a><span class="signature">&lt;<wbr><span class="type-parameter">U</span>&gt;</span></span> <span class="parameter-name">child</span></span>)
+    <span class="returntype parameter">&#8594; <a href="animation/Animation-class.html">Animation</a><span class="signature">&lt;<wbr><span class="type-parameter">U</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Chains a <a href="animation/Tween-class.html">Tween</a> (or <a href="animation/CurveTween-class.html">CurveTween</a>) to this <a href="animation/Animation-class.html">Animation</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="fling" class="callable">
+  <span class="name"><a href="animation/AnimationController/fling.html">fling</a></span><span class="signature">(<wbr>{<span class="parameter" id="fling-param-velocity"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">velocity</span> = <span class="default-value">1.0</span>, </span><span class="parameter" id="fling-param-springDescription"><span class="type-annotation"><a href="physics/SpringDescription-class.html">SpringDescription</a>?</span> <span class="parameter-name">springDescription</span>, </span><span class="parameter" id="fling-param-animationBehavior"><span class="type-annotation"><a href="animation/AnimationBehavior.html">AnimationBehavior</a>?</span> <span class="parameter-name">animationBehavior</span></span>})
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drives the animation with a spring (within <a href="animation/AnimationController/lowerBound.html">lowerBound</a> and <a href="animation/AnimationController/upperBound.html">upperBound</a>)
+and initial velocity.
+  
+
+</dd>
+
+        <dt id="forward" class="callable">
+  <span class="name"><a href="animation/AnimationController/forward.html">forward</a></span><span class="signature">(<wbr>{<span class="parameter" id="forward-param-from"><span class="type-annotation"><a href="dart-core/double-class.html">double</a>?</span> <span class="parameter-name">from</span></span>})
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Starts running this animation forwards (towards the end).
+  
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="notifyListeners" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalListenersMixin/notifyListeners.html">notifyListeners</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Calls all the listeners.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="notifyStatusListeners" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalStatusListenersMixin/notifyStatusListeners.html">notifyStatusListeners</a></span><span class="signature">(<wbr><span class="parameter" id="notifyStatusListeners-param-status"><span class="type-annotation"><a href="animation/AnimationStatus.html">AnimationStatus</a></span> <span class="parameter-name">status</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Calls all the status listeners.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="removeListener" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalListenersMixin/removeListener.html">removeListener</a></span><span class="signature">(<wbr><span class="parameter" id="removeListener-param-listener"><span class="type-annotation"><a href="dart-ui/VoidCallback.html">VoidCallback</a></span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Stop calling the listener every time the value of the animation changes.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="removeStatusListener" class="callable inherited">
+  <span class="name"><a href="animation/AnimationLocalStatusListenersMixin/removeStatusListener.html">removeStatusListener</a></span><span class="signature">(<wbr><span class="parameter" id="removeStatusListener-param-listener"><span class="type-annotation"><a href="animation/AnimationStatusListener.html">AnimationStatusListener</a></span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Stops calling the listener every time the status of the animation changes.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="repeat" class="callable">
+  <span class="name"><a href="animation/AnimationController/repeat.html">repeat</a></span><span class="signature">(<wbr>{<span class="parameter" id="repeat-param-min"><span class="type-annotation"><a href="dart-core/double-class.html">double</a>?</span> <span class="parameter-name">min</span>, </span><span class="parameter" id="repeat-param-max"><span class="type-annotation"><a href="dart-core/double-class.html">double</a>?</span> <span class="parameter-name">max</span>, </span><span class="parameter" id="repeat-param-reverse"><span class="type-annotation"><a href="dart-core/bool-class.html">bool</a></span> <span class="parameter-name">reverse</span> = <span class="default-value">false</span>, </span><span class="parameter" id="repeat-param-period"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a>?</span> <span class="parameter-name">period</span>, </span><span class="parameter" id="repeat-param-count"><span class="type-annotation"><a href="dart-core/int-class.html">int</a>?</span> <span class="parameter-name">count</span></span>})
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Starts running this animation in the forward direction, and
+restarts the animation when it completes.
+  
+
+</dd>
+
+        <dt id="reset" class="callable">
+  <span class="name"><a href="animation/AnimationController/reset.html">reset</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the controller's value to <a href="animation/AnimationController/lowerBound.html">lowerBound</a>, stopping the animation (if
+in progress), and resetting to its beginning point, or dismissed state.
+  
+
+</dd>
+
+        <dt id="resync" class="callable">
+  <span class="name"><a href="animation/AnimationController/resync.html">resync</a></span><span class="signature">(<wbr><span class="parameter" id="resync-param-vsync"><span class="type-annotation"><a href="scheduler/TickerProvider-class.html">TickerProvider</a></span> <span class="parameter-name">vsync</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Recreates the <a href="scheduler/Ticker-class.html">Ticker</a> with the new <a href="scheduler/TickerProvider-class.html">TickerProvider</a>.
+  
+
+</dd>
+
+        <dt id="reverse" class="callable">
+  <span class="name"><a href="animation/AnimationController/reverse.html">reverse</a></span><span class="signature">(<wbr>{<span class="parameter" id="reverse-param-from"><span class="type-annotation"><a href="dart-core/double-class.html">double</a>?</span> <span class="parameter-name">from</span></span>})
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Starts running this animation in reverse (towards the beginning).
+  
+
+</dd>
+
+        <dt id="stop" class="callable">
+  <span class="name"><a href="animation/AnimationController/stop.html">stop</a></span><span class="signature">(<wbr>{<span class="parameter" id="stop-param-canceled"><span class="type-annotation"><a href="dart-core/bool-class.html">bool</a></span> <span class="parameter-name">canceled</span> = <span class="default-value">true</span></span>})
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Stops running this animation.
+  
+
+</dd>
+
+        <dt id="toggle" class="callable">
+  <span class="name"><a href="animation/AnimationController/toggle.html">toggle</a></span><span class="signature">(<wbr>{<span class="parameter" id="toggle-param-from"><span class="type-annotation"><a href="dart-core/double-class.html">double</a>?</span> <span class="parameter-name">from</span></span>})
+    <span class="returntype parameter">&#8594; <a href="scheduler/TickerFuture-class.html">TickerFuture</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Toggles the direction of this animation, based on whether it <a href="animation/Animation/isForwardOrCompleted.html">isForwardOrCompleted</a>.
+  
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="animation/Animation/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toStringDetails" class="callable">
+  <span class="name"><a href="animation/AnimationController/toStringDetails.html">toStringDetails</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Provides a string describing the status of this object, but not including
+information about the object itself.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="animation/">animation</a></li>
+    <li class="self-crumb">AnimationController class</li>
+</ol>
+
+    <h5>animation library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

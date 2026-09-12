@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the GravitySimulation class from the physics library, for the Dart programming language.">
+  <title>GravitySimulation class - physics library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="physics/">physics.dart</a></li>
+    <li class="self-crumb">GravitySimulation class</li>
+  </ol>
+  <div class="self-name">GravitySimulation</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="physics&#47;physics-library-sidebar.html"
+    data-below-sidebar="physics&#47;GravitySimulation-class-sidebar.html">
+    <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://github.com/flutter/flutter/blob/main/packages/flutter/lib/src/physics/gravity_simulation.dart#L56"><span class="material-symbols-outlined">description</span></a></div>
+<h1><span class="kind-class">GravitySimulation</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>A simulation that applies a constant accelerating force.</p>
+<p>Models a particle that follows Newton's second law of motion. The simulation
+ends when the position exceeds a defined threshold.</p>
+<p>
+<a name="physics.GravitySimulation.1"></a>
+<div class="snippet snippet-container anchor-container">
+  <div class="snippet-description">
+This method triggers an <a href="animation/AnimationController-class.html">AnimationController</a> (a previously constructed
+<code>_controller</code> field) to simulate a fall of 300 pixels.
+</div>
+  <a class="anchor-button-overlay anchor-button" title="Copy link to clipboard"
+    onmouseenter="fixHref(this, 'physics.GravitySimulation.1');" onclick="fixHref(this, 'physics.GravitySimulation.1'); copyStringToClipboard(this.href);"
+    href="#">
+    <i class="material-icons anchor-image">link</i>
+  </a>
+  <div class="copyable-container">
+    <button class="copy-button-overlay copy-button" title="Copy to clipboard"
+      onclick="copyTextToClipboard(findSiblingWithId(this, 'sample-code'));">
+      <i class="material-icons copy-image">content_copy</i>
+    </button>
+    <pre class="language-dart" id="sample-code"><code class="language-dart">void _startFall() {
+  _controller.animateWith(GravitySimulation(
+    10.0, &#47;&#47; acceleration, pixels per second per second
+    0.0, &#47;&#47; starting position, pixels
+    300.0, &#47;&#47; ending position, pixels
+    0.0, &#47;&#47; starting velocity, pixels per second
+  ));
+}</code></pre>
+  </div>
+</div>
+</p>
+<p>This <a href="animation/AnimationController-class.html">AnimationController</a> could be used with an <a href="widgets/AnimatedBuilder-class.html">AnimatedBuilder</a> to
+animate the position of a child as if it was falling.</p>
+<p>The end distance threshold (the constructor's third argument) must be
+specified as a positive number but can be reached in either the positive or
+negative direction. For example (assuming negative numbers represent higher
+physical positions than positive numbers, as is the case with the normal
+<a href="dart-ui/Canvas-class.html">Canvas</a> coordinate system), if the acceleration is positive ("down") the
+starting velocity is negative ("up"), and the starting distance is zero, the
+particle will climb from the origin, reach a plateau, then fall back towards
+and past the origin. If the end distance threshold is less than the height
+of the plateau, then the simulation will end during the climb; otherwise, it
+will end during the fall, after the particle travels below the origin by
+that distance.</p>
+<p>See also:</p>
+<ul>
+<li><a href="animation/Curves/bounceOut-constant.html">Curves.bounceOut</a>, a <a href="animation/Curve-class.html">Curve</a> that has a similar aesthetics but includes
+a bouncing effect.</li>
+</ul>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="dart-core/Object-class.html">Object</a></li>
+        <li><a href="physics/Simulation-class.html">Simulation</a></li>
+      <li>GravitySimulation</li>
+    </ul>
+  </dd>
+
+        
+        
+
+
+        
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+    <dl class="constructor-summary-list">
+        <dt id="GravitySimulation.new" class="callable">
+          <span class="name"><a href="physics/GravitySimulation/GravitySimulation.html">GravitySimulation</a></span><span class="signature">(<span class="parameter" id="-param-acceleration"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">acceleration</span>, </span><span class="parameter" id="-param-distance"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">distance</span>, </span><span class="parameter" id="-param-endDistance"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">endDistance</span>, </span><span class="parameter" id="-param-velocity"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">velocity</span></span>)</span>
+        </dt>
+        <dd>
+          Creates a <a href="physics/GravitySimulation-class.html">GravitySimulation</a> using the given arguments, which are,
+respectively: an acceleration that is to be applied continually over time;
+an initial position relative to an origin; the magnitude of the distance
+from that origin beyond which (in either direction) to consider the
+simulation to be "done", which must be positive; and an initial velocity.
+        </dd>
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="instance-properties">
+    <h2>Properties</h2>
+    <dl class="properties">
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="dart-core/Type-class.html">Type</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="tolerance" class="property inherited">
+  <span class="name"><a href="physics/Simulation/tolerance.html">tolerance</a></span>
+  <span class="signature">&#8596; <a href="physics/Tolerance-class.html">Tolerance</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  How close to the actual end of the simulation a value at a particular time
+must be before <a href="physics/Simulation/isDone.html">isDone</a> considers the simulation to be "done".
+  <div class="features"><span class="feature">getter/setter pair</span><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="dx" class="callable">
+  <span class="name"><a href="physics/GravitySimulation/dx.html">dx</a></span><span class="signature">(<wbr><span class="parameter" id="dx-param-time"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">time</span></span>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  The velocity of the object in the simulation at the given time.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="isDone" class="callable">
+  <span class="name"><a href="physics/GravitySimulation/isDone.html">isDone</a></span><span class="signature">(<wbr><span class="parameter" id="isDone-param-time"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">time</span></span>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Whether the simulation is "done" at the given time.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable">
+  <span class="name"><a href="physics/GravitySimulation/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  A string representation of this object.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="x" class="callable">
+  <span class="name"><a href="physics/GravitySimulation/x.html">x</a></span><span class="signature">(<wbr><span class="parameter" id="x-param-time"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">time</span></span>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  The position of the object in the simulation at the given time.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="physics/">physics</a></li>
+    <li class="self-crumb">GravitySimulation class</li>
+</ol>
+
+    <h5>physics library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

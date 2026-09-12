@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="dart:developer library API docs, for the Dart programming language.">
+  <title>dart:developer library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li class="self-crumb">dart:developer</li>
+  </ol>
+  <div class="self-name">dart:developer</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="dart-developer&#47;dart-developer-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">dart:developer</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Interact with developer tools such as the debugger and inspector.</p>
+<p>This is a specialized library intended for interacting with the Dart runtime
+programmatically for debugging and inspection. Sample uses include advanced
+debugging, and creating developer tools.</p>
+<p>This library has platform specific implementations for Dart web
+and Dart Native (VM). A specific platform may not support all operations.</p>
+<p>The functionality provided by this library is generally only available
+to Dart code run in development mode, e.g., <code>dart run</code>, and not in production
+mode, e.g., the output of <code>dart compile exe</code>.</p>
+<h2 id="debugging">Debugging</h2>
+<p>The <a href="dart-developer/debugger.html">debugger</a> function can be used to stop the program as if a breakpoint
+was hit. The breakpoint will be placed right after the call to <code>debugger</code>.
+This functionality can be useful for triggering breakpoints based on logic
+in the code.</p>
+<p>Example:</p>
+<pre class="language-dart"><code class="language-dart">var counter = 0;
+final someInterestingValue = 1000;
+while (true) {
+  if (counter == someInterestingValue) {
+    // Trigger a breakpoint in the debugger.
+    debugger();
+  }
+  counter++;
+}
+</code></pre>
+<p>When executed with <code>dart run --observe</code>, and opened in DevTools, the
+debugger will be stopped with <code>counter</code> at the value <code>1000</code>.</p>
+<h2 id="inspection">Inspection</h2>
+<p>Developer tools, such as Dart DevTools, connected to the runtime system
+may allow for inspecting execution timing in a "timeline" view.
+The static methods of <a href="dart-developer/Timeline-class.html">Timeline</a> can add extra information and timing events
+to this view.</p>
+<p>Example:</p>
+<pre class="language-dart"><code class="language-dart">void main() {
+  Timeline.timeSync('Calculation loop', () {
+    for (var i = 30; i &lt; 50; i++) {
+      Timeline.timeSync('fib($i)', () {
+        fibonacci(i);
+      });
+    }
+  });
+}
+
+int fibonacci(int n) =&gt; (n &lt; 2) ? n : fibonacci(n - 2) + fibonacci(n - 1);
+</code></pre>
+<p>When executed with <code>dart run --observe</code>, and opened in DevTools,
+the Performance tab will display a timeline containing the annotations
+passed to <code>timeSync</code>.</p>
+<h2 id="developer-tools">Developer tools</h2>
+<p>A developer tool, like the debugger built into the <code>dart</code> command,
+may access information about the running application
+exposed by the runtime system,
+using the <a href="dart-developer/Service-class.html">Service</a> and <a href="dart-developer/ServiceProtocolInfo-class.html">ServiceProtocolInfo</a> classes.</p>
+</section>
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+      <dl>
+          <dt id="Flow">
+  <span class="name "><a href="dart-developer/Flow-class.html">Flow</a></span> 
+
+</dt>
+<dd>
+  A class to represent Flow events.
+</dd>
+
+          <dt id="NativeRuntime">
+  <span class="name "><a href="dart-developer/NativeRuntime-class.html">NativeRuntime</a></span> 
+
+</dt>
+<dd>
+  Functionality available on the native runtime.
+</dd>
+
+          <dt id="Service">
+  <span class="name "><a href="dart-developer/Service-class.html">Service</a></span> 
+
+</dt>
+<dd>
+  Access information about the service protocol and control the web server
+that provides access to the services provided by the Dart VM for
+debugging and inspecting Dart programs.
+</dd>
+
+          <dt id="ServiceExtensionResponse">
+  <span class="name "><a href="dart-developer/ServiceExtensionResponse-class.html">ServiceExtensionResponse</a></span> 
+
+</dt>
+<dd>
+  A response to a service protocol extension RPC.
+</dd>
+
+          <dt id="ServiceProtocolInfo">
+  <span class="name "><a href="dart-developer/ServiceProtocolInfo-class.html">ServiceProtocolInfo</a></span> 
+
+</dt>
+<dd>
+  Service protocol is the protocol that a client like the Observatory
+could use to access the services provided by the Dart VM for
+debugging and inspecting Dart programs. This class encapsulates the
+version number and Uri for accessing this service.
+</dd>
+
+          <dt id="Timeline">
+  <span class="name "><a href="dart-developer/Timeline-class.html">Timeline</a></span> 
+
+</dt>
+<dd>
+  Add to the timeline.
+</dd>
+
+          <dt id="TimelineTask">
+  <span class="name "><a href="dart-developer/TimelineTask-class.html">TimelineTask</a></span> 
+
+</dt>
+<dd>
+  An asynchronous task on the timeline. An asynchronous task can have many
+(nested) synchronous operations. Synchronous operations can live longer than
+the current isolate event. To pass a <a href="dart-developer/TimelineTask-class.html">TimelineTask</a> to another isolate,
+you must first call <a href="dart-developer/TimelineTask/pass.html">pass</a> to get the task id and then construct a new
+<a href="dart-developer/TimelineTask-class.html">TimelineTask</a> in the other isolate.
+</dd>
+
+          <dt id="UserTag">
+  <span class="name "><a href="dart-developer/UserTag-class.html">UserTag</a></span> 
+
+</dt>
+<dd>
+  A UserTag can be used to group samples in the
+<a href="https://docs.flutter.dev/tools/devtools/cpu-profiler">DevTools CPU profiler</a>.
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+      <dl>
+          <dt id="TimelineRecorder">
+  <span class="name "><a href="dart-developer/TimelineRecorder.html">TimelineRecorder</a></span> 
+
+</dt>
+<dd>
+  Types of timeline recorders supported by the VM.
+</dd>
+
+          <dt id="TimelineStream">
+  <span class="name "><a href="dart-developer/TimelineStream.html">TimelineStream</a></span> 
+
+</dt>
+<dd>
+  Specific sets of events whose recording can be enabled separately.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+
+    <section class="summary offset-anchor" id="properties">
+      <h2>Properties</h2>
+      <dl class="properties">
+          <dt id="extensionStreamHasListener" class="property">
+  <span class="name"><a href="dart-developer/extensionStreamHasListener.html">extensionStreamHasListener</a></span>
+  <span class="signature">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Whether the "Extension" stream currently has at least one listener.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+          <dt id="reachabilityBarrier" class="property">
+  <span class="name"><a href="dart-developer/reachabilityBarrier.html">reachabilityBarrier</a></span>
+  <span class="signature">&#8594; <a href="dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd>
+  Current reachability barrier state.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="debugger" class="callable">
+  <span class="name"><a href="dart-developer/debugger.html">debugger</a></span><span class="signature">(<wbr>{<span class="parameter" id="debugger-param-when"><span class="type-annotation"><a href="dart-core/bool-class.html">bool</a></span> <span class="parameter-name">when</span> = <span class="default-value">true</span>, </span><span class="parameter" id="debugger-param-message"><span class="type-annotation"><a href="dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span></span>})
+    <span class="returntype parameter">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  If <code>when</code> is true, stop the program as if a breakpoint were hit at the
+following statement.
+  
+
+</dd>
+
+          <dt id="getCurrentTag" class="callable">
+  <span class="name"><a href="dart-developer/getCurrentTag.html">getCurrentTag</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="dart-developer/UserTag-class.html">UserTag</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the current <a href="dart-developer/UserTag-class.html">UserTag</a> for the isolate.
+  
+
+</dd>
+
+          <dt id="inspect" class="callable">
+  <span class="name"><a href="dart-developer/inspect.html">inspect</a></span><span class="signature">(<wbr><span class="parameter" id="inspect-param-object"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">object</span></span>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/Object-class.html">Object</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Send a reference to <code>object</code> to any attached debuggers.
+  
+
+</dd>
+
+          <dt id="log" class="callable">
+  <span class="name"><a href="dart-developer/log.html">log</a></span><span class="signature">(<wbr><span class="parameter" id="log-param-message"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, {</span><span class="parameter" id="log-param-time"><span class="type-annotation"><a href="dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">time</span>, </span><span class="parameter" id="log-param-sequenceNumber"><span class="type-annotation"><a href="dart-core/int-class.html">int</a>?</span> <span class="parameter-name">sequenceNumber</span>, </span><span class="parameter" id="log-param-level"><span class="type-annotation"><a href="dart-core/int-class.html">int</a></span> <span class="parameter-name">level</span> = <span class="default-value">0</span>, </span><span class="parameter" id="log-param-name"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="log-param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a>?</span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="log-param-error"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">error</span>, </span><span class="parameter" id="log-param-stackTrace"><span class="type-annotation"><a href="dart-core/StackTrace-class.html">StackTrace</a>?</span> <span class="parameter-name">stackTrace</span></span>})
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Emit a log event, which can can viewed using the DevTools
+<a href="https://docs.flutter.dev/tools/devtools/logging">Logging view</a>.
+  
+
+</dd>
+
+          <dt id="postEvent" class="callable">
+  <span class="name"><a href="dart-developer/postEvent.html">postEvent</a></span><span class="signature">(<wbr><span class="parameter" id="postEvent-param-eventKind"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">eventKind</span>, </span><span class="parameter" id="postEvent-param-eventData"><span class="type-annotation"><a href="dart-core/Map-class.html">Map</a></span> <span class="parameter-name">eventData</span>, {</span><span class="parameter" id="postEvent-param-stream"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">stream</span> = <span class="default-value">&#39;Extension&#39;</span></span>})
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Post an event of <code>eventKind</code> with payload of <code>eventData</code> to the "Extension"
+event stream.
+  
+
+</dd>
+
+          <dt id="registerExtension" class="callable">
+  <span class="name"><a href="dart-developer/registerExtension.html">registerExtension</a></span><span class="signature">(<wbr><span class="parameter" id="registerExtension-param-method"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="registerExtension-param-handler"><span class="type-annotation"><a href="dart-developer/ServiceExtensionHandler.html">ServiceExtensionHandler</a></span> <span class="parameter-name">handler</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Register a <a href="dart-developer/ServiceExtensionHandler.html">ServiceExtensionHandler</a> that will be invoked in this isolate
+for <code>method</code>. <em>NOTE</em>: Service protocol extensions must be registered
+in each isolate.
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="ServiceExtensionHandler" class="callable">
+    <span class="name"><a href="dart-developer/ServiceExtensionHandler.html">ServiceExtensionHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-developer/ServiceExtensionResponse-class.html">ServiceExtensionResponse</a></span>&gt;</span> Function<span class="signature">(<span class="parameter" id="ServiceExtensionHandler-param-method"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="ServiceExtensionHandler-param-parameters"><span class="type-annotation"><a href="dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">parameters</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    A service protocol extension handler. Registered with <a href="dart-developer/registerExtension.html">registerExtension</a>.
+    
+
+  </dd>
+
+          
+  <dt id="TimelineAsyncFunction" class="callable">
+    <span class="name"><a href="dart-developer/TimelineAsyncFunction.html">TimelineAsyncFunction</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/Future-class.html">Future</a> Function<span class="signature">()</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    
+    
+
+  </dd>
+
+          
+  <dt id="TimelineSyncFunction" class="callable">
+    <span class="name"><a href="dart-developer/TimelineSyncFunction.html">TimelineSyncFunction</a></span>&lt;<wbr><span class="type-parameter">T</span>&gt;<span class="signature">
+      <span class="returntype parameter">= T Function<span class="signature">()</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    A typedef for the function argument to <a href="dart-developer/Timeline/timeSync.html">Timeline.timeSync</a>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li class="self-crumb">dart:developer</li>
+</ol>
+
+    <h5><span class="package-name">Flutter</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="animation/">animation</a></li>
+      <li><a href="cupertino/">cupertino</a></li>
+      <li><a href="foundation/">foundation</a></li>
+      <li><a href="gestures/">gestures</a></li>
+      <li><a href="material/">material</a></li>
+      <li><a href="painting/">painting</a></li>
+      <li><a href="physics/">physics</a></li>
+      <li><a href="rendering/">rendering</a></li>
+      <li><a href="scheduler/">scheduler</a></li>
+      <li><a href="semantics/">semantics</a></li>
+      <li><a href="services/">services</a></li>
+      <li><a href="widget_previews/">widget_previews</a></li>
+      <li><a href="widgets/">widgets</a></li>
+      <li class="section-title">Dart</li>
+      <li><a href="dart-ui/">dart:ui</a></li>
+      <li><a href="dart-ui_web/">dart:ui_web</a></li>
+      <li class="section-subtitle">Core</li>
+        <li class="section-subitem"><a href="dart-async/">dart:async</a></li>
+        <li class="section-subitem"><a href="dart-collection/">dart:collection</a></li>
+        <li class="section-subitem"><a href="dart-convert/">dart:convert</a></li>
+        <li class="section-subitem"><a href="dart-core/">dart:core</a></li>
+        <li class="section-subitem"><a href="dart-developer/">dart:developer</a></li>
+        <li class="section-subitem"><a href="dart-math/">dart:math</a></li>
+        <li class="section-subitem"><a href="dart-typed_data/">dart:typed_data</a></li>
+      <li class="section-subtitle">VM</li>
+        <li class="section-subitem"><a href="dart-ffi/">dart:ffi</a></li>
+        <li class="section-subitem"><a href="dart-io/">dart:io</a></li>
+        <li class="section-subitem"><a href="dart-isolate/">dart:isolate</a></li>
+      <li class="section-subtitle">Web</li>
+        <li class="section-subitem">
+          <a href="https:&#47;&#47;pub.dev&#47;documentation&#47;web&#47;latest&#47;" target="_blank">
+            package:web
+            <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </li>
+        <li class="section-subitem"><a href="dart-js_interop/">dart:js_interop</a></li>
+        <li class="section-subitem"><a href="dart-js_interop_unsafe/">dart:js_interop_unsafe</a></li>
+      <li class="section-subtitle">Web (Legacy)</li>
+        <li class="section-subitem"><a class="deprecated" href="dart-html/">dart:html</a></li>
+        <li class="section-subitem"><a class="deprecated" href="dart-js/">dart:js</a></li>
+      <li class="section-title">platform_integration</li>
+      <li><a href="Android/">android</a></li>
+      <li><a href="iOS/">ios</a></li>
+      <li><a href="Linux/">linux</a></li>
+      <li><a href="macOS/">macos</a></li>
+      <li><a href="Windows/">windows</a></li>
+      <li class="section-title">flutter_test</li>
+      <li><a href="flutter_test/">flutter_test</a></li>
+      <li class="section-title">flutter_driver</li>
+      <li><a href="flutter_driver_extension/">driver_extension</a></li>
+      <li><a href="flutter_driver/">flutter_driver</a></li>
+      <li class="section-title">Flutter</li>
+      <li class="section-title">flutter_gpu</li>
+      <li><a href="flutter_gpu/">gpu</a></li>
+      <li class="section-title">flutter_localizations</li>
+      <li><a href="flutter_localizations/">flutter_localizations</a></li>
+      <li class="section-title">flutter_web_plugins</li>
+      <li><a href="flutter_web_plugins/">flutter_web_plugins</a></li>
+      <li><a href="package-flutter_web_plugins_url_strategy/">url_strategy</a></li>
+      <li class="section-title">leak_tracker_flutter_testing</li>
+      <li><a href="package-leak_tracker_flutter_testing_leak_tracker_flutter_testing/">leak_tracker_flutter_testing</a></li>
+      <li class="section-title">async</li>
+      <li><a href="package-async_async/">async</a></li>
+      <li class="section-title">boolean_selector</li>
+      <li><a href="package-boolean_selector_boolean_selector/">boolean_selector</a></li>
+      <li class="section-title">characters</li>
+      <li><a href="package-characters_characters/">characters</a></li>
+      <li class="section-title">clock</li>
+      <li><a href="package-clock_clock/">clock</a></li>
+      <li class="section-title">collection</li>
+      <li><a class="deprecated" href="package-collection_algorithms/">algorithms</a></li>
+      <li><a href="package-collection_collection/">collection</a></li>
+      <li><a class="deprecated" href="package-collection_equality/">equality</a></li>
+      <li><a class="deprecated" href="package-collection_iterable_zip/">iterable_zip</a></li>
+      <li><a class="deprecated" href="package-collection_priority_queue/">priority_queue</a></li>
+      <li><a class="deprecated" href="package-collection_wrappers/">wrappers</a></li>
+      <li class="section-title">crypto</li>
+      <li><a href="package-crypto_crypto/">crypto</a></li>
+      <li class="section-title">fake_async</li>
+      <li><a href="package-fake_async_fake_async/">fake_async</a></li>
+      <li class="section-title">file</li>
+      <li><a href="package-file_chroot/">chroot</a></li>
+      <li><a href="package-file_file/">file</a></li>
+      <li><a href="package-file_local/">local</a></li>
+      <li><a href="package-file_memory/">memory</a></li>
+      <li class="section-title">integration_test</li>
+      <li><a href="package-integration_test_common/">common</a></li>
+      <li><a href="package-integration_test_integration_test/">integration_test</a></li>
+      <li><a href="package-integration_test_integration_test_driver/">integration_test_driver</a></li>
+      <li><a href="package-integration_test_integration_test_driver_extended/">integration_test_driver_extended</a></li>
+      <li class="section-title">intl</li>
+      <li><a href="package-intl_date_symbol_data_custom/">date_symbol_data_custom</a></li>
+      <li><a href="package-intl_date_symbol_data_file/">date_symbol_data_file</a></li>
+      <li><a href="package-intl_date_symbol_data_http_request/">date_symbol_data_http_request</a></li>
+      <li><a href="package-intl_date_symbol_data_local/">date_symbol_data_local</a></li>
+      <li><a href="package-intl_date_symbols/">date_symbols</a></li>
+      <li><a href="package-intl_date_time_patterns/">date_time_patterns</a></li>
+      <li><a href="package-intl_find_locale/">find_locale</a></li>
+      <li><a href="package-intl_intl/">intl</a></li>
+      <li><a href="package-intl_intl_default/">intl_default</a></li>
+      <li><a href="package-intl_intl_standalone/">intl_standalone</a></li>
+      <li><a href="package-intl_locale/">locale</a></li>
+      <li><a href="package-intl_message_format/">message_format</a></li>
+      <li><a href="package-intl_message_lookup_by_library/">message_lookup_by_library</a></li>
+      <li><a href="package-intl_number_symbols/">number_symbols</a></li>
+      <li><a href="package-intl_number_symbols_data/">number_symbols_data</a></li>
+      <li class="section-title">leak_tracker</li>
+      <li><a href="package-leak_tracker_leak_tracker/">leak_tracker</a></li>
+      <li class="section-title">leak_tracker_testing</li>
+      <li><a href="package-leak_tracker_testing_leak_tracker_testing/">leak_tracker_testing</a></li>
+      <li class="section-title">matcher</li>
+      <li><a href="package-matcher_expect/">expect</a></li>
+      <li><a href="package-matcher_matcher/">matcher</a></li>
+      <li class="section-title">material_color_utilities</li>
+      <li><a href="package-material_color_utilities_blend_blend/">blend/blend</a></li>
+      <li><a href="package-material_color_utilities_contrast_contrast/">contrast/contrast</a></li>
+      <li><a href="package-material_color_utilities_dislike_dislike_analyzer/">dislike/dislike_analyzer</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_dynamic_color/">dynamiccolor/dynamic_color</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_dynamic_scheme/">dynamiccolor/dynamic_scheme</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_material_dynamic_colors/">dynamiccolor/material_dynamic_colors</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_src_contrast_curve/">dynamiccolor/src/contrast_curve</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_src_tone_delta_pair/">dynamiccolor/src/tone_delta_pair</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_variant/">dynamiccolor/variant</a></li>
+      <li><a href="package-material_color_utilities_hct_cam16/">hct/cam16</a></li>
+      <li><a href="package-material_color_utilities_hct_hct/">hct/hct</a></li>
+      <li><a href="package-material_color_utilities_hct_src_hct_solver/">hct/src/hct_solver</a></li>
+      <li><a href="package-material_color_utilities_hct_viewing_conditions/">hct/viewing_conditions</a></li>
+      <li><a href="package-material_color_utilities_material_color_utilities/">material_color_utilities</a></li>
+      <li><a href="package-material_color_utilities_palettes_core_palette/">palettes/core_palette</a></li>
+      <li><a href="package-material_color_utilities_palettes_core_palettes/">palettes/core_palettes</a></li>
+      <li><a href="package-material_color_utilities_palettes_tonal_palette/">palettes/tonal_palette</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer/">quantize/quantizer</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_celebi/">quantize/quantizer_celebi</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_map/">quantize/quantizer_map</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_wsmeans/">quantize/quantizer_wsmeans</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_wu/">quantize/quantizer_wu</a></li>
+      <li><a href="package-material_color_utilities_quantize_src_point_provider/">quantize/src/point_provider</a></li>
+      <li><a href="package-material_color_utilities_quantize_src_point_provider_lab/">quantize/src/point_provider_lab</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme/">scheme/scheme</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_content/">scheme/scheme_content</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_expressive/">scheme/scheme_expressive</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_fidelity/">scheme/scheme_fidelity</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_fruit_salad/">scheme/scheme_fruit_salad</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_monochrome/">scheme/scheme_monochrome</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_neutral/">scheme/scheme_neutral</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_rainbow/">scheme/scheme_rainbow</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_tonal_spot/">scheme/scheme_tonal_spot</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_vibrant/">scheme/scheme_vibrant</a></li>
+      <li><a href="package-material_color_utilities_score_score/">score/score</a></li>
+      <li><a href="package-material_color_utilities_temperature_temperature_cache/">temperature/temperature_cache</a></li>
+      <li><a href="package-material_color_utilities_utils_color_utils/">utils/color_utils</a></li>
+      <li><a href="package-material_color_utilities_utils_math_utils/">utils/math_utils</a></li>
+      <li><a href="package-material_color_utilities_utils_string_utils/">utils/string_utils</a></li>
+      <li class="section-title">meta</li>
+      <li><a href="meta_dart2js/">dart2js</a></li>
+      <li><a href="meta/">meta</a></li>
+      <li><a href="meta_meta/">meta_meta</a></li>
+      <li class="section-title">path</li>
+      <li><a href="package-path_path/">path</a></li>
+      <li class="section-title">platform</li>
+      <li><a href="package-platform_platform/">platform</a></li>
+      <li class="section-title">process</li>
+      <li><a href="package-process_process/">process</a></li>
+      <li class="section-title">source_span</li>
+      <li><a href="package-source_span_source_span/">source_span</a></li>
+      <li class="section-title">stack_trace</li>
+      <li><a href="package-stack_trace_stack_trace/">stack_trace</a></li>
+      <li class="section-title">stream_channel</li>
+      <li><a href="package-stream_channel_isolate_channel/">isolate_channel</a></li>
+      <li><a href="package-stream_channel_stream_channel/">stream_channel</a></li>
+      <li class="section-title">string_scanner</li>
+      <li><a href="package-string_scanner_string_scanner/">string_scanner</a></li>
+      <li class="section-title">sync_http</li>
+      <li><a href="sync.http/">sync_http</a></li>
+      <li class="section-title">term_glyph</li>
+      <li><a href="package-term_glyph_term_glyph/">term_glyph</a></li>
+      <li class="section-title">test_api</li>
+      <li><a href="package-test_api_backend/">backend</a></li>
+      <li><a class="deprecated" href="package-test_api_fake/">fake</a></li>
+      <li><a href="package-test_api_hooks/">hooks</a></li>
+      <li><a href="package-test_api_hooks_testing/">hooks_testing</a></li>
+      <li><a href="package-test_api_scaffolding/">scaffolding</a></li>
+      <li><a class="deprecated" href="package-test_api_test_api/">test_api</a></li>
+      <li class="section-title">typed_data</li>
+      <li><a href="package-typed_data_typed_buffers/">typed_buffers</a></li>
+      <li><a href="package-typed_data_typed_data/">typed_data</a></li>
+      <li class="section-title">vector_math</li>
+      <li><a class="deprecated" href="package-vector_math_hash/">hash</a></li>
+      <li><a href="package-vector_math_vector_math/">vector_math</a></li>
+      <li><a href="package-vector_math_vector_math_64/">vector_math_64</a></li>
+      <li><a href="package-vector_math_vector_math_geometry/">vector_math_geometry</a></li>
+      <li><a href="package-vector_math_vector_math_lists/">vector_math_lists</a></li>
+      <li><a href="package-vector_math_vector_math_operations/">vector_math_operations</a></li>
+      <li class="section-title">vm_service</li>
+      <li><a href="package-vm_service_utils/">utils</a></li>
+      <li><a href="vm_service/">vm_service</a></li>
+      <li><a href="package-vm_service_vm_service_io/">vm_service_io</a></li>
+      <li class="section-title">webdriver</li>
+      <li><a href="package-webdriver_async_core/">async_core</a></li>
+      <li><a href="package-webdriver_async_html/">async_html</a></li>
+      <li><a href="package-webdriver_async_io/">async_io</a></li>
+      <li><a class="deprecated" href="core/">core</a></li>
+      <li><a class="deprecated" href="io/">io</a></li>
+      <li><a href="package-webdriver_support_async/">support/async</a></li>
+      <li><a href="package-webdriver_support_firefox_profile/">support/firefox_profile</a></li>
+      <li><a href="package-webdriver_support_stdio_stepper/">support/stdio_stepper</a></li>
+      <li><a href="package-webdriver_sync_core/">sync_core</a></li>
+      <li><a href="package-webdriver_sync_io/">sync_io</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>dart:developer library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

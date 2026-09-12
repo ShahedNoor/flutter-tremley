@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="dart:ffi library API docs, for the Dart programming language.">
+  <title>dart:ffi library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li class="self-crumb">dart:ffi</li>
+  </ol>
+  <div class="self-name">dart:ffi</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="dart-ffi&#47;dart-ffi-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">dart:ffi</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Foreign Function Interface for interoperability with the C programming language.</p>
+<p>For further details, please see: <a href="https://dart.dev/server/c-interop">https://dart.dev/server/c-interop</a>.</p>
+</section>
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+      <dl>
+          <dt id="Abi">
+  <span class="name "><a href="dart-ffi/Abi-class.html">Abi</a></span> 
+
+</dt>
+<dd>
+  An application binary interface (ABI).
+</dd>
+
+          <dt id="AbiSpecificInteger">
+  <span class="name "><a href="dart-ffi/AbiSpecificInteger-class.html">AbiSpecificInteger</a></span> 
+
+</dt>
+<dd>
+  The supertype of all <a href="dart-ffi/Abi-class.html">Abi</a>-specific integer types.
+</dd>
+
+          <dt id="AbiSpecificIntegerMapping">
+  <span class="name "><a href="dart-ffi/AbiSpecificIntegerMapping-class.html">AbiSpecificIntegerMapping</a></span> 
+
+</dt>
+<dd>
+  Mapping for a subtype of <a href="dart-ffi/AbiSpecificInteger-class.html">AbiSpecificInteger</a>.
+</dd>
+
+          <dt id="Allocator">
+  <span class="name "><a href="dart-ffi/Allocator-class.html">Allocator</a></span> 
+
+</dt>
+<dd>
+  Manages memory on the native heap.
+</dd>
+
+          <dt id="Array">
+  <span class="name "><a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="dart-ffi/NativeType-class.html">NativeType</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A fixed-sized array of <code>T</code>s.
+</dd>
+
+          <dt id="Bool">
+  <span class="name "><a href="dart-ffi/Bool-class.html">Bool</a></span> 
+
+</dt>
+<dd>
+  Represents a native bool in C.
+</dd>
+
+          <dt id="Char">
+  <span class="name "><a href="dart-ffi/Char-class.html">Char</a></span> 
+
+</dt>
+<dd>
+  The C <code>char</code> type.
+</dd>
+
+          <dt id="Dart_CObject">
+  <span class="name "><a href="dart-ffi/Dart_CObject-class.html">Dart_CObject</a></span> 
+
+</dt>
+<dd>
+  Opaque, not exposing it's members.
+</dd>
+
+          <dt id="DartRepresentationOf">
+  <span class="name "><a href="dart-ffi/DartRepresentationOf-class.html">DartRepresentationOf</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DefaultAsset">
+  <span class="name "><a href="dart-ffi/DefaultAsset-class.html">DefaultAsset</a></span> 
+
+</dt>
+<dd>
+  Annotation specifying the default asset ID for the current library.
+</dd>
+
+          <dt id="Double">
+  <span class="name "><a href="dart-ffi/Double-class.html">Double</a></span> 
+
+</dt>
+<dd>
+  Represents a native 64 bit double in C.
+</dd>
+
+          <dt id="DynamicLibrary">
+  <span class="name "><a href="dart-ffi/DynamicLibrary-class.html">DynamicLibrary</a></span> 
+
+</dt>
+<dd>
+  A dynamically loaded native library.
+</dd>
+
+          <dt id="Finalizable">
+  <span class="name "><a href="dart-ffi/Finalizable-class.html">Finalizable</a></span> 
+
+</dt>
+<dd>
+  Marker interface for objects which should not be finalized too soon.
+</dd>
+
+          <dt id="Float">
+  <span class="name "><a href="dart-ffi/Float-class.html">Float</a></span> 
+
+</dt>
+<dd>
+  Represents a native 32 bit float in C.
+</dd>
+
+          <dt id="Handle">
+  <span class="name "><a href="dart-ffi/Handle-class.html">Handle</a></span> 
+
+</dt>
+<dd>
+  Represents <code>Dart_Handle</code> from <code>dart_api.h</code> in C.
+</dd>
+
+          <dt id="Int">
+  <span class="name "><a href="dart-ffi/Int-class.html">Int</a></span> 
+
+</dt>
+<dd>
+  The C <code>int</code> type.
+</dd>
+
+          <dt id="Int16">
+  <span class="name "><a href="dart-ffi/Int16-class.html">Int16</a></span> 
+
+</dt>
+<dd>
+  Represents a native signed 16 bit integer in C.
+</dd>
+
+          <dt id="Int32">
+  <span class="name "><a href="dart-ffi/Int32-class.html">Int32</a></span> 
+
+</dt>
+<dd>
+  Represents a native signed 32 bit integer in C.
+</dd>
+
+          <dt id="Int64">
+  <span class="name "><a href="dart-ffi/Int64-class.html">Int64</a></span> 
+
+</dt>
+<dd>
+  Represents a native signed 64 bit integer in C.
+</dd>
+
+          <dt id="Int8">
+  <span class="name "><a href="dart-ffi/Int8-class.html">Int8</a></span> 
+
+</dt>
+<dd>
+  Represents a native signed 8 bit integer in C.
+</dd>
+
+          <dt id="IntPtr">
+  <span class="name "><a href="dart-ffi/IntPtr-class.html">IntPtr</a></span> 
+
+</dt>
+<dd>
+  The C <code>intptr_t</code> type.
+</dd>
+
+          <dt id="Long">
+  <span class="name "><a href="dart-ffi/Long-class.html">Long</a></span> 
+
+</dt>
+<dd>
+  The C <code>long int</code>, aka. <code>long</code>, type.
+</dd>
+
+          <dt id="LongLong">
+  <span class="name "><a href="dart-ffi/LongLong-class.html">LongLong</a></span> 
+
+</dt>
+<dd>
+  The C <code>long long</code> type.
+</dd>
+
+          <dt id="Native">
+  <span class="name "><a href="dart-ffi/Native-class.html">Native</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Annotation binding an external declaration to its native implementation.
+</dd>
+
+          <dt id="NativeApi">
+  <span class="name "><a href="dart-ffi/NativeApi-class.html">NativeApi</a></span> 
+
+</dt>
+<dd>
+  Utilities for accessing the Dart VM API from Dart code or
+from C code via <code>dart_api_dl.h</code>.
+</dd>
+
+          <dt id="NativeCallable">
+  <span class="name "><a href="dart-ffi/NativeCallable-class.html">NativeCallable</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="dart-core/Function-class.html">Function</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A native callable which listens for calls to a native function.
+</dd>
+
+          <dt id="NativeFinalizer">
+  <span class="name "><a href="dart-ffi/NativeFinalizer-class.html">NativeFinalizer</a></span> 
+
+</dt>
+<dd>
+  A native finalizer which can be attached to Dart objects.
+</dd>
+
+          <dt id="NativeFunction">
+  <span class="name "><a href="dart-ffi/NativeFunction-class.html">NativeFunction</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="dart-core/Function-class.html">Function</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Represents a function type in C.
+</dd>
+
+          <dt id="NativeType">
+  <span class="name "><a href="dart-ffi/NativeType-class.html">NativeType</a></span> 
+
+</dt>
+<dd>
+  <a href="dart-ffi/NativeType-class.html">NativeType</a>'s subtypes represent a native type in C.
+</dd>
+
+          <dt id="Opaque">
+  <span class="name "><a href="dart-ffi/Opaque-class.html">Opaque</a></span> 
+
+</dt>
+<dd>
+  <a href="dart-ffi/Opaque-class.html">Opaque</a>'s subtypes represent opaque types in C.
+</dd>
+
+          <dt id="Packed">
+  <span class="name "><a href="dart-ffi/Packed-class.html">Packed</a></span> 
+
+</dt>
+<dd>
+  Annotation to specify on <code>Struct</code> subtypes to indicate that its members
+need to be packed.
+</dd>
+
+          <dt id="Pointer">
+  <span class="name "><a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="dart-ffi/NativeType-class.html">NativeType</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Represents a pointer into the native C memory. Cannot be extended.
+</dd>
+
+          <dt id="Short">
+  <span class="name "><a href="dart-ffi/Short-class.html">Short</a></span> 
+
+</dt>
+<dd>
+  The C <code>short</code> type.
+</dd>
+
+          <dt id="SignedChar">
+  <span class="name "><a href="dart-ffi/SignedChar-class.html">SignedChar</a></span> 
+
+</dt>
+<dd>
+  The C <code>signed char</code> type.
+</dd>
+
+          <dt id="Size">
+  <span class="name "><a href="dart-ffi/Size-class.html">Size</a></span> 
+
+</dt>
+<dd>
+  The C <code>size_t</code> type.
+</dd>
+
+          <dt id="SizedNativeType">
+  <span class="name "><a href="dart-ffi/SizedNativeType-class.html">SizedNativeType</a></span> 
+
+</dt>
+<dd>
+  A <a href="dart-ffi/NativeType-class.html">NativeType</a> with a known size.
+</dd>
+
+          <dt id="Struct">
+  <span class="name "><a href="dart-ffi/Struct-class.html">Struct</a></span> 
+
+</dt>
+<dd>
+  The supertype of all FFI struct types.
+</dd>
+
+          <dt id="Uint16">
+  <span class="name "><a href="dart-ffi/Uint16-class.html">Uint16</a></span> 
+
+</dt>
+<dd>
+  Represents a native unsigned 16 bit integer in C.
+</dd>
+
+          <dt id="Uint32">
+  <span class="name "><a href="dart-ffi/Uint32-class.html">Uint32</a></span> 
+
+</dt>
+<dd>
+  Represents a native unsigned 32 bit integer in C.
+</dd>
+
+          <dt id="Uint64">
+  <span class="name "><a href="dart-ffi/Uint64-class.html">Uint64</a></span> 
+
+</dt>
+<dd>
+  Represents a native unsigned 64 bit integer in C.
+</dd>
+
+          <dt id="Uint8">
+  <span class="name "><a href="dart-ffi/Uint8-class.html">Uint8</a></span> 
+
+</dt>
+<dd>
+  Represents a native unsigned 8 bit integer in C.
+</dd>
+
+          <dt id="UintPtr">
+  <span class="name "><a href="dart-ffi/UintPtr-class.html">UintPtr</a></span> 
+
+</dt>
+<dd>
+  The C <code>uintptr_t</code> type.
+</dd>
+
+          <dt id="Union">
+  <span class="name "><a href="dart-ffi/Union-class.html">Union</a></span> 
+
+</dt>
+<dd>
+  The supertype of all FFI union types.
+</dd>
+
+          <dt id="UnsignedChar">
+  <span class="name "><a href="dart-ffi/UnsignedChar-class.html">UnsignedChar</a></span> 
+
+</dt>
+<dd>
+  The C <code>unsigned char</code> type.
+</dd>
+
+          <dt id="UnsignedInt">
+  <span class="name "><a href="dart-ffi/UnsignedInt-class.html">UnsignedInt</a></span> 
+
+</dt>
+<dd>
+  The C <code>unsigned int</code> type.
+</dd>
+
+          <dt id="UnsignedLong">
+  <span class="name "><a href="dart-ffi/UnsignedLong-class.html">UnsignedLong</a></span> 
+
+</dt>
+<dd>
+  The C <code>unsigned long int</code>, aka. <code>unsigned long</code>, type.
+</dd>
+
+          <dt id="UnsignedLongLong">
+  <span class="name "><a href="dart-ffi/UnsignedLongLong-class.html">UnsignedLongLong</a></span> 
+
+</dt>
+<dd>
+  The C <code>unsigned long long</code> type.
+</dd>
+
+          <dt id="UnsignedShort">
+  <span class="name "><a href="dart-ffi/UnsignedShort-class.html">UnsignedShort</a></span> 
+
+</dt>
+<dd>
+  The C <code>unsigned short</code> type.
+</dd>
+
+          <dt id="VarArgs">
+  <span class="name "><a href="dart-ffi/VarArgs-class.html">VarArgs</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="dart-core/Record-class.html">Record</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  The types of variadic arguments passed in C.
+</dd>
+
+          <dt id="Void">
+  <span class="name "><a href="dart-ffi/Void-class.html">Void</a></span> 
+
+</dt>
+<dd>
+  Represents a void type in C.
+</dd>
+
+          <dt id="WChar">
+  <span class="name "><a href="dart-ffi/WChar-class.html">WChar</a></span> 
+
+</dt>
+<dd>
+  The C <code>wchar_t</code> type.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+    <section class="summary offset-anchor" id="extensions">
+      <h2>Extensions</h2>
+      <dl>
+          <dt id="AbiSpecificIntegerArray">
+  <span class="name "><a href="dart-ffi/AbiSpecificIntegerArray.html">AbiSpecificIntegerArray</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/AbiSpecificInteger-class.html">AbiSpecificInteger</a>.
+</dd>
+
+          <dt id="AbiSpecificIntegerPointer">
+  <span class="name "><a href="dart-ffi/AbiSpecificIntegerPointer.html">AbiSpecificIntegerPointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument
+<a href="dart-ffi/AbiSpecificInteger-class.html">AbiSpecificInteger</a>.
+</dd>
+
+          <dt id="AllocatorAlloc">
+  <span class="name "><a href="dart-ffi/AllocatorAlloc.html">AllocatorAlloc</a></span>
+  on <a href="dart-ffi/Allocator-class.html">Allocator</a>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Allocator-class.html">Allocator</a> to provide allocation with <a href="dart-ffi/NativeType-class.html">NativeType</a>.
+</dd>
+
+          <dt id="ArrayAddress">
+  <span class="name "><a href="dart-ffi/ArrayAddress.html">ArrayAddress</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ArrayArray">
+  <span class="name "><a href="dart-ffi/ArrayArray.html">ArrayArray</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Array-class.html">Array</a>.
+</dd>
+
+          <dt id="BoolAddress">
+  <span class="name "><a href="dart-ffi/BoolAddress.html">BoolAddress</a></span>
+  on <a href="dart-core/bool-class.html">bool</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="BoolArray">
+  <span class="name "><a href="dart-ffi/BoolArray.html">BoolArray</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Bool-class.html">Bool</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Bool-class.html">Bool</a>.
+</dd>
+
+          <dt id="BoolPointer">
+  <span class="name "><a href="dart-ffi/BoolPointer.html">BoolPointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Bool-class.html">Bool</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Bool-class.html">Bool</a>.
+</dd>
+
+          <dt id="DoubleAddress">
+  <span class="name "><a href="dart-ffi/DoubleAddress.html">DoubleAddress</a></span>
+  on <a href="dart-core/double-class.html">double</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DoubleArray">
+  <span class="name "><a href="dart-ffi/DoubleArray.html">DoubleArray</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Double-class.html">Double</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Double-class.html">Double</a>.
+</dd>
+
+          <dt id="DoublePointer">
+  <span class="name "><a href="dart-ffi/DoublePointer.html">DoublePointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Double-class.html">Double</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Double-class.html">Double</a>.
+</dd>
+
+          <dt id="DynamicLibraryExtension">
+  <span class="name "><a href="dart-ffi/DynamicLibraryExtension.html">DynamicLibraryExtension</a></span>
+  on <a href="dart-ffi/DynamicLibrary-class.html">DynamicLibrary</a>
+  
+
+</dt>
+<dd>
+  Method which must not be invoked dynamically.
+</dd>
+
+          <dt id="Float32ListAddress">
+  <span class="name "><a href="dart-ffi/Float32ListAddress.html">Float32ListAddress</a></span>
+  on <a href="dart-typed_data/Float32List-class.html">Float32List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Float64ListAddress">
+  <span class="name "><a href="dart-ffi/Float64ListAddress.html">Float64ListAddress</a></span>
+  on <a href="dart-typed_data/Float64List-class.html">Float64List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="FloatArray">
+  <span class="name "><a href="dart-ffi/FloatArray.html">FloatArray</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Float-class.html">Float</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Float-class.html">Float</a>.
+</dd>
+
+          <dt id="FloatPointer">
+  <span class="name "><a href="dart-ffi/FloatPointer.html">FloatPointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Float-class.html">Float</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Float-class.html">Float</a>.
+</dd>
+
+          <dt id="Int16Array">
+  <span class="name "><a href="dart-ffi/Int16Array.html">Int16Array</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Int16-class.html">Int16</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Int16-class.html">Int16</a>.
+</dd>
+
+          <dt id="Int16ListAddress">
+  <span class="name "><a href="dart-ffi/Int16ListAddress.html">Int16ListAddress</a></span>
+  on <a href="dart-typed_data/Int16List-class.html">Int16List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Int16Pointer">
+  <span class="name "><a href="dart-ffi/Int16Pointer.html">Int16Pointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Int16-class.html">Int16</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Int16-class.html">Int16</a>.
+</dd>
+
+          <dt id="Int32Array">
+  <span class="name "><a href="dart-ffi/Int32Array.html">Int32Array</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Int32-class.html">Int32</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Int32-class.html">Int32</a>.
+</dd>
+
+          <dt id="Int32ListAddress">
+  <span class="name "><a href="dart-ffi/Int32ListAddress.html">Int32ListAddress</a></span>
+  on <a href="dart-typed_data/Int32List-class.html">Int32List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Int32Pointer">
+  <span class="name "><a href="dart-ffi/Int32Pointer.html">Int32Pointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Int32-class.html">Int32</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Int32-class.html">Int32</a>.
+</dd>
+
+          <dt id="Int64Array">
+  <span class="name "><a href="dart-ffi/Int64Array.html">Int64Array</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Int64-class.html">Int64</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Int64-class.html">Int64</a>.
+</dd>
+
+          <dt id="Int64ListAddress">
+  <span class="name "><a href="dart-ffi/Int64ListAddress.html">Int64ListAddress</a></span>
+  on <a href="dart-typed_data/Int64List-class.html">Int64List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Int64Pointer">
+  <span class="name "><a href="dart-ffi/Int64Pointer.html">Int64Pointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Int64-class.html">Int64</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Int64-class.html">Int64</a>.
+</dd>
+
+          <dt id="Int8Array">
+  <span class="name "><a href="dart-ffi/Int8Array.html">Int8Array</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Int8-class.html">Int8</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Int8-class.html">Int8</a>.
+</dd>
+
+          <dt id="Int8ListAddress">
+  <span class="name "><a href="dart-ffi/Int8ListAddress.html">Int8ListAddress</a></span>
+  on <a href="dart-typed_data/Int8List-class.html">Int8List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Int8Pointer">
+  <span class="name "><a href="dart-ffi/Int8Pointer.html">Int8Pointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Int8-class.html">Int8</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Int8-class.html">Int8</a>.
+</dd>
+
+          <dt id="IntAddress">
+  <span class="name "><a href="dart-ffi/IntAddress.html">IntAddress</a></span>
+  on <a href="dart-core/int-class.html">int</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NativeFunctionPointer">
+  <span class="name "><a href="dart-ffi/NativeFunctionPointer.html">NativeFunctionPointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/NativeFunction-class.html">NativeFunction</a><span class="signature">&lt;<wbr><span class="type-parameter">NF</span>&gt;</span></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/NativeFunction-class.html">NativeFunction</a>.
+</dd>
+
+          <dt id="NativePort">
+  <span class="name "><a href="dart-ffi/NativePort.html">NativePort</a></span>
+  on <a href="dart-isolate/SendPort-class.html">SendPort</a>
+  
+
+</dt>
+<dd>
+  Extension to retrieve the native <code>Dart_Port</code> from a <a href="dart-isolate/SendPort-class.html">SendPort</a>.
+</dd>
+
+          <dt id="PointerArray">
+  <span class="name "><a href="dart-ffi/PointerArray.html">PointerArray</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Pointer-class.html">Pointer</a>.
+</dd>
+
+          <dt id="PointerPointer">
+  <span class="name "><a href="dart-ffi/PointerPointer.html">PointerPointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Pointer-class.html">Pointer</a>.
+</dd>
+
+          <dt id="StructAddress">
+  <span class="name "><a href="dart-ffi/StructAddress.html">StructAddress</a></span>
+  on T
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="StructArray">
+  <span class="name "><a href="dart-ffi/StructArray.html">StructArray</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Struct-class.html">Struct</a>.
+</dd>
+
+          <dt id="StructPointer">
+  <span class="name "><a href="dart-ffi/StructPointer.html">StructPointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Struct-class.html">Struct</a>.
+</dd>
+
+          <dt id="Uint16Array">
+  <span class="name "><a href="dart-ffi/Uint16Array.html">Uint16Array</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Uint16-class.html">Uint16</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Uint16-class.html">Uint16</a>.
+</dd>
+
+          <dt id="Uint16ListAddress">
+  <span class="name "><a href="dart-ffi/Uint16ListAddress.html">Uint16ListAddress</a></span>
+  on <a href="dart-typed_data/Uint16List-class.html">Uint16List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Uint16Pointer">
+  <span class="name "><a href="dart-ffi/Uint16Pointer.html">Uint16Pointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Uint16-class.html">Uint16</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Uint16-class.html">Uint16</a>.
+</dd>
+
+          <dt id="Uint32Array">
+  <span class="name "><a href="dart-ffi/Uint32Array.html">Uint32Array</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Uint32-class.html">Uint32</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Uint32-class.html">Uint32</a>.
+</dd>
+
+          <dt id="Uint32ListAddress">
+  <span class="name "><a href="dart-ffi/Uint32ListAddress.html">Uint32ListAddress</a></span>
+  on <a href="dart-typed_data/Uint32List-class.html">Uint32List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Uint32Pointer">
+  <span class="name "><a href="dart-ffi/Uint32Pointer.html">Uint32Pointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Uint32-class.html">Uint32</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Uint32-class.html">Uint32</a>.
+</dd>
+
+          <dt id="Uint64Array">
+  <span class="name "><a href="dart-ffi/Uint64Array.html">Uint64Array</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Uint64-class.html">Uint64</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Uint64-class.html">Uint64</a>.
+</dd>
+
+          <dt id="Uint64ListAddress">
+  <span class="name "><a href="dart-ffi/Uint64ListAddress.html">Uint64ListAddress</a></span>
+  on <a href="dart-typed_data/Uint64List-class.html">Uint64List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Uint64Pointer">
+  <span class="name "><a href="dart-ffi/Uint64Pointer.html">Uint64Pointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Uint64-class.html">Uint64</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Uint64-class.html">Uint64</a>.
+</dd>
+
+          <dt id="Uint8Array">
+  <span class="name "><a href="dart-ffi/Uint8Array.html">Uint8Array</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Uint8-class.html">Uint8</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Uint8-class.html">Uint8</a>.
+</dd>
+
+          <dt id="Uint8ListAddress">
+  <span class="name "><a href="dart-ffi/Uint8ListAddress.html">Uint8ListAddress</a></span>
+  on <a href="dart-typed_data/Uint8List-class.html">Uint8List</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Uint8Pointer">
+  <span class="name "><a href="dart-ffi/Uint8Pointer.html">Uint8Pointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Uint8-class.html">Uint8</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Uint8-class.html">Uint8</a>.
+</dd>
+
+          <dt id="UnionAddress">
+  <span class="name "><a href="dart-ffi/UnionAddress.html">UnionAddress</a></span>
+  on T
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UnionArray">
+  <span class="name "><a href="dart-ffi/UnionArray.html">UnionArray</a></span>
+  on <a href="dart-ffi/Array-class.html">Array</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Bounds checking indexing methods on <a href="dart-ffi/Array-class.html">Array</a>s of <a href="dart-ffi/Union-class.html">Union</a>.
+</dd>
+
+          <dt id="UnionPointer">
+  <span class="name "><a href="dart-ffi/UnionPointer.html">UnionPointer</a></span>
+  on <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Extension on <a href="dart-ffi/Pointer-class.html">Pointer</a> specialized for the type argument <a href="dart-ffi/Union-class.html">Union</a>.
+</dd>
+
+      </dl>
+    </section>
+
+
+    <section class="summary offset-anchor" id="properties">
+      <h2>Properties</h2>
+      <dl class="properties">
+          <dt id="nullptr" class="property">
+  <span class="name"><a href="dart-ffi/nullptr.html">nullptr</a></span>
+  <span class="signature">&#8594; <a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter">Never</span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Represents a pointer into the native C memory corresponding to 'NULL', e.g.
+a pointer with address 0.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="sizeOf" class="callable">
+  <span class="name"><a href="dart-ffi/sizeOf.html">sizeOf</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="dart-ffi/SizedNativeType-class.html">SizedNativeType</a></span>&gt;</span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Number of bytes used by native type T.
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="Dart_NativeMessageHandler" class="callable">
+    <span class="name"><a href="dart-ffi/Dart_NativeMessageHandler.html">Dart_NativeMessageHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-ffi/Void-class.html">Void</a> Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation"><a href="dart-ffi/Int64-class.html">Int64</a></span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Dart_CObject-class.html">Dart_CObject</a></span>&gt;</span></span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    
+    
+
+  </dd>
+
+          
+  <dt id="NativeFinalizerFunction" class="">
+  <span class="name"><a href="dart-ffi/NativeFinalizerFunction.html">NativeFinalizerFunction</a></span>
+    = <a href="dart-ffi/NativeFunction-class.html">NativeFunction</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Void-class.html">Void</a> Function<span class="signature">(<span class="parameter" id="param-token"><span class="type-annotation"><a href="dart-ffi/Pointer-class.html">Pointer</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ffi/Void-class.html">Void</a></span>&gt;</span></span> <span class="parameter-name">token</span></span>)</span></span>&gt;</span>
+  </span>
+  
+
+</dt>
+<dd>
+  The native function type for <a href="dart-ffi/NativeFinalizer-class.html">NativeFinalizer</a>s.
+  
+
+</dd>
+
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li class="self-crumb">dart:ffi</li>
+</ol>
+
+    <h5><span class="package-name">Flutter</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="animation/">animation</a></li>
+      <li><a href="cupertino/">cupertino</a></li>
+      <li><a href="foundation/">foundation</a></li>
+      <li><a href="gestures/">gestures</a></li>
+      <li><a href="material/">material</a></li>
+      <li><a href="painting/">painting</a></li>
+      <li><a href="physics/">physics</a></li>
+      <li><a href="rendering/">rendering</a></li>
+      <li><a href="scheduler/">scheduler</a></li>
+      <li><a href="semantics/">semantics</a></li>
+      <li><a href="services/">services</a></li>
+      <li><a href="widget_previews/">widget_previews</a></li>
+      <li><a href="widgets/">widgets</a></li>
+      <li class="section-title">Dart</li>
+      <li><a href="dart-ui/">dart:ui</a></li>
+      <li><a href="dart-ui_web/">dart:ui_web</a></li>
+      <li class="section-subtitle">Core</li>
+        <li class="section-subitem"><a href="dart-async/">dart:async</a></li>
+        <li class="section-subitem"><a href="dart-collection/">dart:collection</a></li>
+        <li class="section-subitem"><a href="dart-convert/">dart:convert</a></li>
+        <li class="section-subitem"><a href="dart-core/">dart:core</a></li>
+        <li class="section-subitem"><a href="dart-developer/">dart:developer</a></li>
+        <li class="section-subitem"><a href="dart-math/">dart:math</a></li>
+        <li class="section-subitem"><a href="dart-typed_data/">dart:typed_data</a></li>
+      <li class="section-subtitle">VM</li>
+        <li class="section-subitem"><a href="dart-ffi/">dart:ffi</a></li>
+        <li class="section-subitem"><a href="dart-io/">dart:io</a></li>
+        <li class="section-subitem"><a href="dart-isolate/">dart:isolate</a></li>
+      <li class="section-subtitle">Web</li>
+        <li class="section-subitem">
+          <a href="https:&#47;&#47;pub.dev&#47;documentation&#47;web&#47;latest&#47;" target="_blank">
+            package:web
+            <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </li>
+        <li class="section-subitem"><a href="dart-js_interop/">dart:js_interop</a></li>
+        <li class="section-subitem"><a href="dart-js_interop_unsafe/">dart:js_interop_unsafe</a></li>
+      <li class="section-subtitle">Web (Legacy)</li>
+        <li class="section-subitem"><a class="deprecated" href="dart-html/">dart:html</a></li>
+        <li class="section-subitem"><a class="deprecated" href="dart-js/">dart:js</a></li>
+      <li class="section-title">platform_integration</li>
+      <li><a href="Android/">android</a></li>
+      <li><a href="iOS/">ios</a></li>
+      <li><a href="Linux/">linux</a></li>
+      <li><a href="macOS/">macos</a></li>
+      <li><a href="Windows/">windows</a></li>
+      <li class="section-title">flutter_test</li>
+      <li><a href="flutter_test/">flutter_test</a></li>
+      <li class="section-title">flutter_driver</li>
+      <li><a href="flutter_driver_extension/">driver_extension</a></li>
+      <li><a href="flutter_driver/">flutter_driver</a></li>
+      <li class="section-title">Flutter</li>
+      <li class="section-title">flutter_gpu</li>
+      <li><a href="flutter_gpu/">gpu</a></li>
+      <li class="section-title">flutter_localizations</li>
+      <li><a href="flutter_localizations/">flutter_localizations</a></li>
+      <li class="section-title">flutter_web_plugins</li>
+      <li><a href="flutter_web_plugins/">flutter_web_plugins</a></li>
+      <li><a href="package-flutter_web_plugins_url_strategy/">url_strategy</a></li>
+      <li class="section-title">leak_tracker_flutter_testing</li>
+      <li><a href="package-leak_tracker_flutter_testing_leak_tracker_flutter_testing/">leak_tracker_flutter_testing</a></li>
+      <li class="section-title">async</li>
+      <li><a href="package-async_async/">async</a></li>
+      <li class="section-title">boolean_selector</li>
+      <li><a href="package-boolean_selector_boolean_selector/">boolean_selector</a></li>
+      <li class="section-title">characters</li>
+      <li><a href="package-characters_characters/">characters</a></li>
+      <li class="section-title">clock</li>
+      <li><a href="package-clock_clock/">clock</a></li>
+      <li class="section-title">collection</li>
+      <li><a class="deprecated" href="package-collection_algorithms/">algorithms</a></li>
+      <li><a href="package-collection_collection/">collection</a></li>
+      <li><a class="deprecated" href="package-collection_equality/">equality</a></li>
+      <li><a class="deprecated" href="package-collection_iterable_zip/">iterable_zip</a></li>
+      <li><a class="deprecated" href="package-collection_priority_queue/">priority_queue</a></li>
+      <li><a class="deprecated" href="package-collection_wrappers/">wrappers</a></li>
+      <li class="section-title">crypto</li>
+      <li><a href="package-crypto_crypto/">crypto</a></li>
+      <li class="section-title">fake_async</li>
+      <li><a href="package-fake_async_fake_async/">fake_async</a></li>
+      <li class="section-title">file</li>
+      <li><a href="package-file_chroot/">chroot</a></li>
+      <li><a href="package-file_file/">file</a></li>
+      <li><a href="package-file_local/">local</a></li>
+      <li><a href="package-file_memory/">memory</a></li>
+      <li class="section-title">integration_test</li>
+      <li><a href="package-integration_test_common/">common</a></li>
+      <li><a href="package-integration_test_integration_test/">integration_test</a></li>
+      <li><a href="package-integration_test_integration_test_driver/">integration_test_driver</a></li>
+      <li><a href="package-integration_test_integration_test_driver_extended/">integration_test_driver_extended</a></li>
+      <li class="section-title">intl</li>
+      <li><a href="package-intl_date_symbol_data_custom/">date_symbol_data_custom</a></li>
+      <li><a href="package-intl_date_symbol_data_file/">date_symbol_data_file</a></li>
+      <li><a href="package-intl_date_symbol_data_http_request/">date_symbol_data_http_request</a></li>
+      <li><a href="package-intl_date_symbol_data_local/">date_symbol_data_local</a></li>
+      <li><a href="package-intl_date_symbols/">date_symbols</a></li>
+      <li><a href="package-intl_date_time_patterns/">date_time_patterns</a></li>
+      <li><a href="package-intl_find_locale/">find_locale</a></li>
+      <li><a href="package-intl_intl/">intl</a></li>
+      <li><a href="package-intl_intl_default/">intl_default</a></li>
+      <li><a href="package-intl_intl_standalone/">intl_standalone</a></li>
+      <li><a href="package-intl_locale/">locale</a></li>
+      <li><a href="package-intl_message_format/">message_format</a></li>
+      <li><a href="package-intl_message_lookup_by_library/">message_lookup_by_library</a></li>
+      <li><a href="package-intl_number_symbols/">number_symbols</a></li>
+      <li><a href="package-intl_number_symbols_data/">number_symbols_data</a></li>
+      <li class="section-title">leak_tracker</li>
+      <li><a href="package-leak_tracker_leak_tracker/">leak_tracker</a></li>
+      <li class="section-title">leak_tracker_testing</li>
+      <li><a href="package-leak_tracker_testing_leak_tracker_testing/">leak_tracker_testing</a></li>
+      <li class="section-title">matcher</li>
+      <li><a href="package-matcher_expect/">expect</a></li>
+      <li><a href="package-matcher_matcher/">matcher</a></li>
+      <li class="section-title">material_color_utilities</li>
+      <li><a href="package-material_color_utilities_blend_blend/">blend/blend</a></li>
+      <li><a href="package-material_color_utilities_contrast_contrast/">contrast/contrast</a></li>
+      <li><a href="package-material_color_utilities_dislike_dislike_analyzer/">dislike/dislike_analyzer</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_dynamic_color/">dynamiccolor/dynamic_color</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_dynamic_scheme/">dynamiccolor/dynamic_scheme</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_material_dynamic_colors/">dynamiccolor/material_dynamic_colors</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_src_contrast_curve/">dynamiccolor/src/contrast_curve</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_src_tone_delta_pair/">dynamiccolor/src/tone_delta_pair</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_variant/">dynamiccolor/variant</a></li>
+      <li><a href="package-material_color_utilities_hct_cam16/">hct/cam16</a></li>
+      <li><a href="package-material_color_utilities_hct_hct/">hct/hct</a></li>
+      <li><a href="package-material_color_utilities_hct_src_hct_solver/">hct/src/hct_solver</a></li>
+      <li><a href="package-material_color_utilities_hct_viewing_conditions/">hct/viewing_conditions</a></li>
+      <li><a href="package-material_color_utilities_material_color_utilities/">material_color_utilities</a></li>
+      <li><a href="package-material_color_utilities_palettes_core_palette/">palettes/core_palette</a></li>
+      <li><a href="package-material_color_utilities_palettes_core_palettes/">palettes/core_palettes</a></li>
+      <li><a href="package-material_color_utilities_palettes_tonal_palette/">palettes/tonal_palette</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer/">quantize/quantizer</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_celebi/">quantize/quantizer_celebi</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_map/">quantize/quantizer_map</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_wsmeans/">quantize/quantizer_wsmeans</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_wu/">quantize/quantizer_wu</a></li>
+      <li><a href="package-material_color_utilities_quantize_src_point_provider/">quantize/src/point_provider</a></li>
+      <li><a href="package-material_color_utilities_quantize_src_point_provider_lab/">quantize/src/point_provider_lab</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme/">scheme/scheme</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_content/">scheme/scheme_content</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_expressive/">scheme/scheme_expressive</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_fidelity/">scheme/scheme_fidelity</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_fruit_salad/">scheme/scheme_fruit_salad</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_monochrome/">scheme/scheme_monochrome</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_neutral/">scheme/scheme_neutral</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_rainbow/">scheme/scheme_rainbow</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_tonal_spot/">scheme/scheme_tonal_spot</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_vibrant/">scheme/scheme_vibrant</a></li>
+      <li><a href="package-material_color_utilities_score_score/">score/score</a></li>
+      <li><a href="package-material_color_utilities_temperature_temperature_cache/">temperature/temperature_cache</a></li>
+      <li><a href="package-material_color_utilities_utils_color_utils/">utils/color_utils</a></li>
+      <li><a href="package-material_color_utilities_utils_math_utils/">utils/math_utils</a></li>
+      <li><a href="package-material_color_utilities_utils_string_utils/">utils/string_utils</a></li>
+      <li class="section-title">meta</li>
+      <li><a href="meta_dart2js/">dart2js</a></li>
+      <li><a href="meta/">meta</a></li>
+      <li><a href="meta_meta/">meta_meta</a></li>
+      <li class="section-title">path</li>
+      <li><a href="package-path_path/">path</a></li>
+      <li class="section-title">platform</li>
+      <li><a href="package-platform_platform/">platform</a></li>
+      <li class="section-title">process</li>
+      <li><a href="package-process_process/">process</a></li>
+      <li class="section-title">source_span</li>
+      <li><a href="package-source_span_source_span/">source_span</a></li>
+      <li class="section-title">stack_trace</li>
+      <li><a href="package-stack_trace_stack_trace/">stack_trace</a></li>
+      <li class="section-title">stream_channel</li>
+      <li><a href="package-stream_channel_isolate_channel/">isolate_channel</a></li>
+      <li><a href="package-stream_channel_stream_channel/">stream_channel</a></li>
+      <li class="section-title">string_scanner</li>
+      <li><a href="package-string_scanner_string_scanner/">string_scanner</a></li>
+      <li class="section-title">sync_http</li>
+      <li><a href="sync.http/">sync_http</a></li>
+      <li class="section-title">term_glyph</li>
+      <li><a href="package-term_glyph_term_glyph/">term_glyph</a></li>
+      <li class="section-title">test_api</li>
+      <li><a href="package-test_api_backend/">backend</a></li>
+      <li><a class="deprecated" href="package-test_api_fake/">fake</a></li>
+      <li><a href="package-test_api_hooks/">hooks</a></li>
+      <li><a href="package-test_api_hooks_testing/">hooks_testing</a></li>
+      <li><a href="package-test_api_scaffolding/">scaffolding</a></li>
+      <li><a class="deprecated" href="package-test_api_test_api/">test_api</a></li>
+      <li class="section-title">typed_data</li>
+      <li><a href="package-typed_data_typed_buffers/">typed_buffers</a></li>
+      <li><a href="package-typed_data_typed_data/">typed_data</a></li>
+      <li class="section-title">vector_math</li>
+      <li><a class="deprecated" href="package-vector_math_hash/">hash</a></li>
+      <li><a href="package-vector_math_vector_math/">vector_math</a></li>
+      <li><a href="package-vector_math_vector_math_64/">vector_math_64</a></li>
+      <li><a href="package-vector_math_vector_math_geometry/">vector_math_geometry</a></li>
+      <li><a href="package-vector_math_vector_math_lists/">vector_math_lists</a></li>
+      <li><a href="package-vector_math_vector_math_operations/">vector_math_operations</a></li>
+      <li class="section-title">vm_service</li>
+      <li><a href="package-vm_service_utils/">utils</a></li>
+      <li><a href="vm_service/">vm_service</a></li>
+      <li><a href="package-vm_service_vm_service_io/">vm_service_io</a></li>
+      <li class="section-title">webdriver</li>
+      <li><a href="package-webdriver_async_core/">async_core</a></li>
+      <li><a href="package-webdriver_async_html/">async_html</a></li>
+      <li><a href="package-webdriver_async_io/">async_io</a></li>
+      <li><a class="deprecated" href="core/">core</a></li>
+      <li><a class="deprecated" href="io/">io</a></li>
+      <li><a href="package-webdriver_support_async/">support/async</a></li>
+      <li><a href="package-webdriver_support_firefox_profile/">support/firefox_profile</a></li>
+      <li><a href="package-webdriver_support_stdio_stepper/">support/stdio_stepper</a></li>
+      <li><a href="package-webdriver_sync_core/">sync_core</a></li>
+      <li><a href="package-webdriver_sync_io/">sync_io</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>dart:ffi library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

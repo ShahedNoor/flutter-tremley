@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the Tween class from the animation library, for the Dart programming language.">
+  <title>Tween class - animation library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="animation/">animation.dart</a></li>
+    <li class="self-crumb">Tween<span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="dart-core/Object-class.html">Object</a>?</span>&gt;</span> class</li>
+  </ol>
+  <div class="self-name">Tween</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="animation&#47;animation-library-sidebar.html"
+    data-below-sidebar="animation&#47;Tween-class-sidebar.html">
+    <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://github.com/flutter/flutter/blob/main/packages/flutter/lib/src/animation/tween.dart#L267"><span class="material-symbols-outlined">description</span></a></div>
+<h1><span class="kind-class">Tween&lt;<wbr><span class="type-parameter">T extends Object?</span>&gt;</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>A linear interpolation between a beginning and ending value.</p>
+<p><a href="animation/Tween-class.html">Tween</a> is useful if you want to interpolate across a range.</p>
+<p>To use a <a href="animation/Tween-class.html">Tween</a> object with an animation, call the <a href="animation/Tween-class.html">Tween</a> object's
+<a href="animation/Animatable/animate.html">animate</a> method and pass it the <a href="animation/Animation-class.html">Animation</a> object that you want to
+modify.</p>
+<p>You can chain <a href="animation/Tween-class.html">Tween</a> objects together using the <a href="animation/Animatable/chain.html">chain</a> method,
+producing the function composition of their <a href="animation/Tween/transform.html">transform</a> methods.
+Configuring a single <a href="animation/Animation-class.html">Animation</a> object by calling <a href="animation/Animatable/animate.html">animate</a> on the
+resulting <a href="animation/Tween-class.html">Tween</a> produces the same result as calling the <a href="animation/Animatable/animate.html">animate</a> method
+on each <a href="animation/Tween-class.html">Tween</a> separately in succession, but more efficiently because
+it avoids creating <a href="animation/Animation-class.html">Animation</a> objects for the intermediate results.</p>
+<p>
+<a name="animation.Tween.1"></a>
+<div class="snippet snippet-container anchor-container">
+  <div class="snippet-description">
+Suppose <code>_controller</code> is an <a href="animation/AnimationController-class.html">AnimationController</a>, and we want to create an
+<a href="animation/Animation-class.html">Animation&lt;Offset&gt;</a> that is controlled by that controller, and save it in
+<code>_animation</code>. Here are two possible ways of expressing this:
+</div>
+  <a class="anchor-button-overlay anchor-button" title="Copy link to clipboard"
+    onmouseenter="fixHref(this, 'animation.Tween.1');" onclick="fixHref(this, 'animation.Tween.1'); copyStringToClipboard(this.href);"
+    href="#">
+    <i class="material-icons anchor-image">link</i>
+  </a>
+  <div class="copyable-container">
+    <button class="copy-button-overlay copy-button" title="Copy to clipboard"
+      onclick="copyTextToClipboard(findSiblingWithId(this, 'sample-code'));">
+      <i class="material-icons copy-image">content_copy</i>
+    </button>
+    <pre class="language-dart" id="sample-code"><code class="language-dart">_animation = _controller.drive(
+  Tween&lt;Offset&gt;(
+    begin: const Offset(100.0, 50.0),
+    end: const Offset(200.0, 300.0),
+  ),
+);</code></pre>
+  </div>
+</div>
+</p>
+<p>
+<a name="animation.Tween.2"></a>
+<div class="snippet snippet-container anchor-container">
+  
+  <a class="anchor-button-overlay anchor-button" title="Copy link to clipboard"
+    onmouseenter="fixHref(this, 'animation.Tween.2');" onclick="fixHref(this, 'animation.Tween.2'); copyStringToClipboard(this.href);"
+    href="#">
+    <i class="material-icons anchor-image">link</i>
+  </a>
+  <div class="copyable-container">
+    <button class="copy-button-overlay copy-button" title="Copy to clipboard"
+      onclick="copyTextToClipboard(findSiblingWithId(this, 'sample-code'));">
+      <i class="material-icons copy-image">content_copy</i>
+    </button>
+    <pre class="language-dart" id="sample-code"><code class="language-dart">_animation = Tween&lt;Offset&gt;(
+  begin: const Offset(100.0, 50.0),
+  end: const Offset(200.0, 300.0),
+).animate(_controller);</code></pre>
+  </div>
+</div>
+</p>
+<p>In both cases, the <code>_animation</code> variable holds an object that, over the
+lifetime of the <code>_controller</code>'s animation, returns a value
+(<code>_animation.value</code>) that depicts a point along the line between the two
+offsets above. If we used a <a href="material/MaterialPointArcTween-class.html">MaterialPointArcTween</a> instead of a
+<a href="animation/Tween-class.html">Tween&lt;Offset&gt;</a> in the code above, the points would follow a pleasing curve
+instead of a straight line, with no other changes necessary.</p>
+<h2 id="performance-optimizations">Performance optimizations</h2>
+<p>Tweens are mutable; specifically, their <a href="animation/Tween/begin.html">begin</a> and <a href="animation/Tween/end.html">end</a> values can be
+changed at runtime. An object created with <a href="animation/Animation/drive.html">Animation.drive</a> using a <a href="animation/Tween-class.html">Tween</a>
+will immediately honor changes to that underlying <a href="animation/Tween-class.html">Tween</a> (though the
+listeners will only be triggered if the <a href="animation/Animation-class.html">Animation</a> is actively animating).
+This can be used to change an animation on the fly without having to
+recreate all the objects in the chain from the <a href="animation/AnimationController-class.html">AnimationController</a> to the
+final <a href="animation/Tween-class.html">Tween</a>.</p>
+<p>If a <a href="animation/Tween-class.html">Tween</a>'s values are never changed, however, a further optimization can
+be applied: the object can be stored in a <code>static final</code> variable, so that
+the exact same instance is used whenever the <a href="animation/Tween-class.html">Tween</a> is needed. This is
+preferable to creating an identical <a href="animation/Tween-class.html">Tween</a> afresh each time a <a href="widgets/State/build.html">State.build</a>
+method is called, for example.</p>
+<h2 id="types-with-special-considerations">Types with special considerations</h2>
+<p>Classes with <a href="animation/Tween/lerp.html">lerp</a> static methods typically have corresponding dedicated
+<a href="animation/Tween-class.html">Tween</a> subclasses that call that method. For example, <a href="animation/ColorTween-class.html">ColorTween</a> uses
+<a href="dart-ui/Color/lerp.html">Color.lerp</a> to implement the <a href="animation/ColorTween/lerp.html">ColorTween.lerp</a> method.</p>
+<p>Types that define <code>+</code> and <code>-</code> operators to combine values (<code>T + T → T</code> and
+<code>T - T → T</code>) and an <code>*</code> operator to scale by multiplying with a double (<code>T * double → T</code>) can be directly used with <code>Tween&lt;T&gt;</code>.</p>
+<p>This does not extend to any type with <code>+</code>, <code>-</code>, and <code>*</code> operators. In
+particular, <a href="dart-core/int-class.html">int</a> does not satisfy this precise contract (<code>int * double</code>
+actually returns <a href="dart-core/num-class.html">num</a>, not <a href="dart-core/int-class.html">int</a>). There are therefore two specific classes
+that can be used to interpolate integers:</p>
+<ul>
+<li><a href="animation/IntTween-class.html">IntTween</a>, which is an approximation of a linear interpolation (using
+<a href="dart-core/double/round.html">double.round</a>).</li>
+<li><a href="animation/StepTween-class.html">StepTween</a>, which uses <a href="dart-core/double/floor.html">double.floor</a> to ensure that the result is
+never greater than it would be using if a <code>Tween&lt;double&gt;</code>.</li>
+</ul>
+<p>The relevant operators on <a href="dart-ui/Size-class.html">Size</a> also don't fulfill this contract, so
+<a href="animation/SizeTween-class.html">SizeTween</a> uses <a href="dart-ui/Size/lerp.html">Size.lerp</a>.</p>
+<p>In addition, some of the types that <em>do</em> have suitable <code>+</code>, <code>-</code>, and <code>*</code>
+operators still have dedicated <a href="animation/Tween-class.html">Tween</a> subclasses that perform the
+interpolation in a more specialized manner. One such class is
+<a href="material/MaterialPointArcTween-class.html">MaterialPointArcTween</a>, which is mentioned above. The <a href="rendering/AlignmentTween-class.html">AlignmentTween</a>, and
+<a href="rendering/AlignmentGeometryTween-class.html">AlignmentGeometryTween</a>, and <a href="rendering/FractionalOffsetTween-class.html">FractionalOffsetTween</a> are another group of
+<a href="animation/Tween-class.html">Tween</a>s that use dedicated <code>lerp</code> methods instead of merely relying on the
+operators (in particular, this allows them to handle null values in a more
+useful manner).</p>
+<h2 id="nullability">Nullability</h2>
+<p>The <a href="animation/Tween/begin.html">begin</a> and <a href="animation/Tween/end.html">end</a> fields are nullable; a <a href="animation/Tween-class.html">Tween</a> does not have to
+have non-null values specified when it is created.</p>
+<p>If <code>T</code> is nullable, then <a href="animation/Tween/lerp.html">lerp</a> and <a href="animation/Tween/transform.html">transform</a> may return null.
+This is typically seen in the case where <a href="animation/Tween/begin.html">begin</a> is null and <code>t</code>
+is 0.0, or <a href="animation/Tween/end.html">end</a> is null and <code>t</code> is 1.0, or both are null (at any
+<code>t</code> value).</p>
+<p>If <code>T</code> is not nullable, then <a href="animation/Tween/begin.html">begin</a> and <a href="animation/Tween/end.html">end</a> must both be set to
+non-null values before using <a href="animation/Tween/lerp.html">lerp</a> or <a href="animation/Tween/transform.html">transform</a>, otherwise they
+will throw.</p>
+<h2 id="implementing-a-tween">Implementing a Tween</h2>
+<p>To specialize this class for a new type, the subclass should implement
+the <a href="animation/Tween/lerp.html">lerp</a> method (and a constructor). The other methods of this class
+are all defined in terms of <a href="animation/Tween/lerp.html">lerp</a>.</p>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="dart-core/Object-class.html">Object</a></li>
+        <li><a href="animation/Animatable-class.html">Animatable</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></li>
+      <li>Tween</li>
+    </ul>
+  </dd>
+
+        
+        
+
+          <dt>Implementers</dt>
+          <dd><ul class="comma-separated clazz-relationships">
+              <li><a href="rendering/AlignmentGeometryTween-class.html">AlignmentGeometryTween</a></li>
+              <li><a href="rendering/AlignmentTween-class.html">AlignmentTween</a></li>
+              <li><a href="widgets/BorderRadiusTween-class.html">BorderRadiusTween</a></li>
+              <li><a href="widgets/BorderTween-class.html">BorderTween</a></li>
+              <li><a href="widgets/BoxConstraintsTween-class.html">BoxConstraintsTween</a></li>
+              <li><a href="animation/ColorTween-class.html">ColorTween</a></li>
+              <li><a href="animation/ConstantTween-class.html">ConstantTween</a></li>
+              <li><a href="widgets/DecorationTween-class.html">DecorationTween</a></li>
+              <li><a href="widgets/EdgeInsetsGeometryTween-class.html">EdgeInsetsGeometryTween</a></li>
+              <li><a href="widgets/EdgeInsetsTween-class.html">EdgeInsetsTween</a></li>
+              <li><a href="rendering/FractionalOffsetTween-class.html">FractionalOffsetTween</a></li>
+              <li><a href="animation/IntTween-class.html">IntTween</a></li>
+              <li><a href="material/MaterialPointArcTween-class.html">MaterialPointArcTween</a></li>
+              <li><a href="widgets/Matrix4Tween-class.html">Matrix4Tween</a></li>
+              <li><a href="animation/RectTween-class.html">RectTween</a></li>
+              <li><a href="widgets/RelativeRectTween-class.html">RelativeRectTween</a></li>
+              <li><a href="animation/ReverseTween-class.html">ReverseTween</a></li>
+              <li><a href="material/ShapeBorderTween-class.html">ShapeBorderTween</a></li>
+              <li><a href="animation/SizeTween-class.html">SizeTween</a></li>
+              <li><a href="animation/StepTween-class.html">StepTween</a></li>
+              <li><a href="widgets/TextStyleTween-class.html">TextStyleTween</a></li>
+              <li><a href="material/ThemeDataTween-class.html">ThemeDataTween</a></li>
+          </ul></dd>
+
+        
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+    <dl class="constructor-summary-list">
+        <dt id="Tween.new" class="callable">
+          <span class="name"><a href="animation/Tween/Tween.html">Tween</a></span><span class="signature">({<span class="parameter" id="-param-begin"><span class="type-annotation">T?</span> <span class="parameter-name">begin</span>, </span><span class="parameter" id="-param-end"><span class="type-annotation">T?</span> <span class="parameter-name">end</span></span>})</span>
+        </dt>
+        <dd>
+          Creates a tween.
+        </dd>
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-properties">
+    <h2>Properties</h2>
+    <dl class="properties">
+        <dt id="begin" class="property">
+  <span class="name"><a href="animation/Tween/begin.html">begin</a></span>
+  <span class="signature">&#8596; T?</span>
+  
+
+</dt>
+<dd>
+  The value this variable has at the beginning of the animation.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="end" class="property">
+  <span class="name"><a href="animation/Tween/end.html">end</a></span>
+  <span class="signature">&#8596; T?</span>
+  
+
+</dt>
+<dd>
+  The value this variable has at the end of the animation.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="dart-core/Type-class.html">Type</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="animate" class="callable inherited">
+  <span class="name"><a href="animation/Animatable/animate.html">animate</a></span><span class="signature">(<wbr><span class="parameter" id="animate-param-parent"><span class="type-annotation"><a href="animation/Animation-class.html">Animation</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/double-class.html">double</a></span>&gt;</span></span> <span class="parameter-name">parent</span></span>)
+    <span class="returntype parameter">&#8594; <a href="animation/Animation-class.html">Animation</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a new <a href="animation/Animation-class.html">Animation</a> that is driven by the given animation but that
+takes on values determined by this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="chain" class="callable inherited">
+  <span class="name"><a href="animation/Animatable/chain.html">chain</a></span><span class="signature">(<wbr><span class="parameter" id="chain-param-parent"><span class="type-annotation"><a href="animation/Animatable-class.html">Animatable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/double-class.html">double</a></span>&gt;</span></span> <span class="parameter-name">parent</span></span>)
+    <span class="returntype parameter">&#8594; <a href="animation/Animatable-class.html">Animatable</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a new <a href="animation/Animatable-class.html">Animatable</a> whose value is determined by first evaluating
+the given parent and then evaluating this object at the result.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="evaluate" class="callable inherited">
+  <span class="name"><a href="animation/Animatable/evaluate.html">evaluate</a></span><span class="signature">(<wbr><span class="parameter" id="evaluate-param-animation"><span class="type-annotation"><a href="animation/Animation-class.html">Animation</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/double-class.html">double</a></span>&gt;</span></span> <span class="parameter-name">animation</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The current value of this object for the given <a href="animation/Animation-class.html">Animation</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="lerp" class="callable">
+  <span class="name"><a href="animation/Tween/lerp.html">lerp</a></span><span class="signature">(<wbr><span class="parameter" id="lerp-param-t"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">t</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the value this variable has at the given animation clock value.
+  
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable">
+  <span class="name"><a href="animation/Tween/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  A string representation of this object.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="transform" class="callable">
+  <span class="name"><a href="animation/Tween/transform.html">transform</a></span><span class="signature">(<wbr><span class="parameter" id="transform-param-t"><span class="type-annotation"><a href="dart-core/double-class.html">double</a></span> <span class="parameter-name">t</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the interpolated value for the current value of the given animation.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="animation/">animation</a></li>
+    <li class="self-crumb">Tween<span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="dart-core/Object-class.html">Object</a>?</span>&gt;</span> class</li>
+</ol>
+
+    <h5>animation library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

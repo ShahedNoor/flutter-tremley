@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the debugCheckZone method from the SchedulerBinding mixin, for the Dart programming language.">
+  <title>debugCheckZone method - SchedulerBinding mixin - scheduler library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="scheduler/">scheduler.dart</a></li>
+    <li><a href="scheduler/SchedulerBinding-mixin.html">SchedulerBinding</a></li>
+    <li class="self-crumb">debugCheckZone method</li>
+  </ol>
+  <div class="self-name">debugCheckZone</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="scheduler&#47;SchedulerBinding-mixin-sidebar.html"
+    data-below-sidebar="">
+    <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://github.com/flutter/flutter/blob/main/packages/flutter/lib/src/foundation/binding.dart#L493"><span class="material-symbols-outlined">description</span></a></div>
+<h1><span class="kind-method">debugCheckZone</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<span class="returntype"><a href="dart-core/bool-class.html">bool</a></span>
+<span class="name ">debugCheckZone</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="debugCheckZone-param-entryPoint"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">entryPoint</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">inherited</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Checks that the current <a href="dart-async/Zone-class.html">Zone</a> is the same as that which was used
+to initialize the binding.</p>
+<p>If the current zone (<a href="dart-async/Zone/current.html">Zone.current</a>) is not the zone that was active when
+the binding was initialized, then this method generates a <a href="foundation/FlutterError-class.html">FlutterError</a>
+exception with detailed information. The exception is either thrown
+directly, or reported via <a href="foundation/FlutterError/reportError.html">FlutterError.reportError</a>, depending on the
+value of <a href="foundation/BindingBase/debugZoneErrorsAreFatal.html">BindingBase.debugZoneErrorsAreFatal</a>.</p>
+<p>To silence the message displayed by <a href="foundation/BindingBase/debugCheckZone.html">debugCheckZone</a>, ensure that the same
+zone is used when calling <code>ensureInitialized()</code> as when calling the
+framework in any other context (e.g. via <a href="widgets/runApp.html">runApp</a>). For example, consider
+keeping a reference to the zone used to initialize the binding, and using
+<a href="dart-async/Zone/run.html">Zone.run</a> to use it again when calling into the framework.</p>
+<h2 id="usage">Usage</h2>
+<p>The binding is considered initialized once <a href="foundation/BindingBase/initInstances.html">BindingBase.initInstances</a> has
+run; if this is called before then, it will throw an <a href="dart-core/AssertionError-class.html">AssertionError</a>.</p>
+<p>The <code>entryPoint</code> parameter is the name of the API that is checking the
+zones are consistent, for example, <code>'runApp'</code>.</p>
+<p>This function always returns true (if it does not throw). It is expected
+to be invoked via the binding instance, e.g.:</p>
+<pre class="language-dart"><code class="language-dart">void startup() {
+  WidgetsBinding binding = WidgetsFlutterBinding.ensureInitialized();
+  assert(binding.debugCheckZone('startup'));
+  // ...
+}
+</code></pre>
+<p>If the binding expects to be used with multiple zones, it should override
+this method to return true always without throwing. (For example, the
+bindings used with <a href="flutter_test/">flutter_test</a> do this as they make heavy use of zones
+to drive the framework with an artificial clock and to catch errors and
+report them as test failures.)</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">bool debugCheckZone(String entryPoint) {
+  assert(() {
+    assert(
+      _debugBindingZone != null,
+      &#39;debugCheckZone can only be used after the binding is fully initialized.&#39;,
+    );
+    if (Zone.current != _debugBindingZone) {
+      final Error message = FlutterError(
+        &#39;Zone mismatch.\n&#39;
+        &#39;The Flutter bindings were initialized in a different zone than is now being used. &#39;
+        &#39;This will likely cause confusion and bugs as any zone-specific configuration will &#39;
+        &#39;inconsistently use the configuration of the original binding initialization zone &#39;
+        &#39;or this zone based on hard-to-predict factors such as which zone was active when &#39;
+        &#39;a particular callback was set.\n&#39;
+        &#39;It is important to use the same zone when calling `ensureInitialized` on the binding &#39;
+        &#39;as when calling `$entryPoint` later.\n&#39;
+        &#39;To make this ${debugZoneErrorsAreFatal ? &#39;error non-fatal&#39; : &#39;warning fatal&#39;}, &#39;
+        &#39;set BindingBase.debugZoneErrorsAreFatal to ${!debugZoneErrorsAreFatal} before the &#39;
+        &#39;bindings are initialized (i.e. as the first statement in `void main() { }`).&#39;,
+      );
+      if (debugZoneErrorsAreFatal) {
+        throw message;
+      }
+      FlutterError.reportError(
+        FlutterErrorDetails(
+          exception: message,
+          stack: StackTrace.current,
+          context: ErrorDescription(&#39;during $entryPoint&#39;),
+        ),
+      );
+    }
+    return true;
+  }());
+  return true;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="scheduler/">scheduler</a></li>
+    <li><a href="scheduler/SchedulerBinding-mixin.html">SchedulerBinding</a></li>
+    <li class="self-crumb">debugCheckZone method</li>
+</ol>
+
+    <h5>SchedulerBinding mixin</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

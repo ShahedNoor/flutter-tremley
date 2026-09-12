@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="dart:async library API docs, for the Dart programming language.">
+  <title>dart:async library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li class="self-crumb">dart:async</li>
+  </ol>
+  <div class="self-name">dart:async</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="dart-async&#47;dart-async-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">dart:async</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Support for asynchronous programming,
+with classes such as Future and Stream.</p>
+<p><a href="dart-async/Future-class.html">Future</a>s and <a href="dart-async/Stream-class.html">Stream</a>s are the fundamental building blocks
+of asynchronous programming in Dart. They are supported
+directly in the language through <code>async</code> and <code>async*</code>
+functions, and are available to all libraries through
+the <code>dart:core</code> library.</p>
+<p>This library provides further tools for creating, consuming
+and transforming futures and streams, as well as direct access to
+other asynchronous primitives like <a href="dart-async/Timer-class.html">Timer</a>,
+<a href="dart-async/scheduleMicrotask.html">scheduleMicrotask</a> and <a href="dart-async/Zone-class.html">Zone</a>.</p>
+<p>To use this library in your code:</p>
+<pre class="language-dart"><code class="language-dart">import 'dart:async';
+</code></pre>
+<h2 id="future">Future</h2>
+<p>A Future object represents a computation whose return value
+might not yet be available.
+The Future returns the value of the computation
+when it completes at some time in the future.
+Futures are often used for APIs that are implemented using a
+different thread or isolate (e.g., the asynchronous I/O
+operations of <code>dart:io</code> or HTTP requests of <code>dart:html</code>).</p>
+<p>Many methods in the Dart libraries return <code>Future</code>s when
+performing tasks. For example, when binding an <code>HttpServer</code>
+to a host and port, the <code>bind()</code> method returns a Future.</p>
+<pre class="language-dart"><code class="language-dart"> HttpServer.bind('127.0.0.1', 4444)
+     .then((server) =&gt; print('${server.isBroadcast}'))
+     .catchError(print);
+</code></pre>
+<p><a href="dart-async/Future/then.html">Future.then</a> registers a callback function that runs
+when the Future's operation, in this case the <code>bind()</code> method,
+completes successfully.
+The value returned by the operation
+is passed into the callback function.
+In this example, the <code>bind()</code> method returns the HttpServer
+object. The callback function prints one of its properties.
+<a href="dart-async/Future/catchError.html">Future.catchError</a> registers a callback function that
+runs if an error occurs within the Future.</p>
+<h2 id="stream">Stream</h2>
+<p>A Stream provides an asynchronous sequence of data.
+Examples of data sequences include individual events, like mouse clicks,
+or sequential chunks of larger data, like multiple byte lists with the
+contents of a file
+such as mouse clicks, and a stream of byte lists read from a file.
+The following example opens a file for reading.
+<a href="dart-async/Stream/listen.html">Stream.listen</a> registers callback functions that run
+each time more data is available, an error has occurred, or
+the stream has finished.
+Further functionality is provided on <a href="dart-async/Stream-class.html">Stream</a>, implemented by calling
+<a href="dart-async/Stream/listen.html">Stream.listen</a> to get the actual data.</p>
+<pre class="language-dart"><code class="language-dart">Stream&lt;List&lt;int&gt;&gt; stream = File('quotes.txt').openRead();
+stream.transform(utf8.decoder).forEach(print);
+</code></pre>
+<p>This stream emits a sequence of lists of bytes.
+The program must then handle those lists of bytes in some way.
+Here, the code uses a UTF-8 decoder (provided in the <code>dart:convert</code> library)
+to convert the sequence of bytes into a sequence
+of Dart strings.</p>
+<p>Another common use of streams is for user-generated events
+in a web app: The following code listens for mouse clicks on a button.</p>
+<pre class="language-dart"><code class="language-dart">querySelector('#myButton')!.onClick.forEach((_) =&gt; print('Click.'));
+</code></pre>
+<h2 id="other-resources">Other resources</h2>
+<ul>
+<li>
+<p>The <a href="https://dart.dev/guides/libraries/library-tour#dartasync---asynchronous-programming">dart:async section of the library tour</a>:
+A brief overview of asynchronous programming.</p>
+</li>
+<li>
+<p><a href="https://dart.dev/codelabs/async-await">Use Future-Based APIs</a>: A closer look at Futures and
+how to use them to write asynchronous Dart code.</p>
+</li>
+<li>
+<p><a href="https://dart.dev/guides/libraries/futures-error-handling">Futures and Error Handling</a>: Everything you
+wanted to know about handling errors and exceptions when working with
+Futures (but were afraid to ask).</p>
+</li>
+<li>
+<p><a href="https://dart.dev/articles/event-loop/">The Event Loop and Dart</a>:
+Learn how Dart handles the event queue and microtask queue, so you can
+write better asynchronous code with fewer surprises.</p>
+</li>
+<li>
+<p><a href="https://pub.dev/packages/test">test package: Asynchronous Tests</a>: How to test asynchronous
+code.</p>
+</li>
+</ul>
+</section>
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+      <dl>
+          <dt id="Completer">
+  <span class="name "><a href="dart-async/Completer-class.html">Completer</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A way to produce Future objects and to complete them later
+with a value or error.
+</dd>
+
+          <dt id="EventSink">
+  <span class="name "><a href="dart-async/EventSink-class.html">EventSink</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A <a href="dart-core/Sink-class.html">Sink</a> that supports adding errors.
+</dd>
+
+          <dt id="Future">
+  <span class="name "><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  The result of an asynchronous computation.
+</dd>
+
+          <dt id="FutureOr">
+  <span class="name "><a href="dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A type representing values that are either <code>Future&lt;T&gt;</code> or <code>T</code>.
+</dd>
+
+          <dt id="MultiStreamController">
+  <span class="name "><a href="dart-async/MultiStreamController-class.html">MultiStreamController</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  An enhanced stream controller provided by <a href="dart-async/Stream/Stream.multi.html">Stream.multi</a>.
+</dd>
+
+          <dt id="Stream">
+  <span class="name "><a href="dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A source of asynchronous data events.
+</dd>
+
+          <dt id="StreamConsumer">
+  <span class="name "><a href="dart-async/StreamConsumer-class.html">StreamConsumer</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Abstract interface for a "sink" accepting multiple entire streams.
+</dd>
+
+          <dt id="StreamController">
+  <span class="name "><a href="dart-async/StreamController-class.html">StreamController</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A controller with the stream it controls.
+</dd>
+
+          <dt id="StreamIterator">
+  <span class="name "><a href="dart-async/StreamIterator-class.html">StreamIterator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  An <a href="dart-core/Iterator-class.html">Iterator</a>-like interface for the values of a <a href="dart-async/Stream-class.html">Stream</a>.
+</dd>
+
+          <dt id="StreamSink">
+  <span class="name "><a href="dart-async/StreamSink-class.html">StreamSink</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A object that accepts stream events both synchronously and asynchronously.
+</dd>
+
+          <dt id="StreamSubscription">
+  <span class="name "><a href="dart-async/StreamSubscription-class.html">StreamSubscription</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A subscription on events from a <a href="dart-async/Stream-class.html">Stream</a>.
+</dd>
+
+          <dt id="StreamTransformer">
+  <span class="name "><a href="dart-async/StreamTransformer-class.html">StreamTransformer</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Transforms a Stream.
+</dd>
+
+          <dt id="StreamTransformerBase">
+  <span class="name "><a href="dart-async/StreamTransformerBase-class.html">StreamTransformerBase</a><span class="signature">&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Base class for implementing <a href="dart-async/StreamTransformer-class.html">StreamTransformer</a>.
+</dd>
+
+          <dt id="StreamView">
+  <span class="name "><a href="dart-async/StreamView-class.html">StreamView</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  <a href="dart-async/Stream-class.html">Stream</a> wrapper that only exposes the <a href="dart-async/Stream-class.html">Stream</a> interface.
+</dd>
+
+          <dt id="SynchronousStreamController">
+  <span class="name "><a href="dart-async/SynchronousStreamController-class.html">SynchronousStreamController</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  A stream controller that delivers its events synchronously.
+</dd>
+
+          <dt id="Timer">
+  <span class="name "><a href="dart-async/Timer-class.html">Timer</a></span> 
+
+</dt>
+<dd>
+  A countdown timer that can be configured to fire once or repeatedly.
+</dd>
+
+          <dt id="Zone">
+  <span class="name "><a href="dart-async/Zone-class.html">Zone</a></span> 
+
+</dt>
+<dd>
+  A zone represents an environment that remains stable across asynchronous
+calls.
+</dd>
+
+          <dt id="ZoneDelegate">
+  <span class="name "><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> 
+
+</dt>
+<dd>
+  An adapted view of the parent zone.
+</dd>
+
+          <dt id="ZoneSpecification">
+  <span class="name "><a href="dart-async/ZoneSpecification-class.html">ZoneSpecification</a></span> 
+
+</dt>
+<dd>
+  A parameter object with custom zone function handlers for <a href="dart-async/Zone/fork.html">Zone.fork</a>.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+    <section class="summary offset-anchor" id="extensions">
+      <h2>Extensions</h2>
+      <dl>
+          <dt id="FutureExtensions">
+  <span class="name "><a href="dart-async/FutureExtensions.html">FutureExtensions</a></span>
+  on <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  Convenience methods on futures.
+</dd>
+
+          <dt id="FutureIterable">
+  <span class="name "><a href="dart-async/FutureIterable.html">FutureIterable</a></span>
+  on <a href="dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="FutureRecord2">
+  <span class="name "><a href="dart-async/FutureRecord2.html">FutureRecord2</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T2</span>&gt;</span></span></span>)
+  
+
+</dt>
+<dd>
+  Parallel operations on a record of futures.
+</dd>
+
+          <dt id="FutureRecord3">
+  <span class="name "><a href="dart-async/FutureRecord3.html">FutureRecord3</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T2</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T3</span>&gt;</span></span></span>)
+  
+
+</dt>
+<dd>
+  Parallel operations on a record of futures.
+</dd>
+
+          <dt id="FutureRecord4">
+  <span class="name "><a href="dart-async/FutureRecord4.html">FutureRecord4</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T2</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T3</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T4</span>&gt;</span></span></span>)
+  
+
+</dt>
+<dd>
+  Parallel operations on a record of futures.
+</dd>
+
+          <dt id="FutureRecord5">
+  <span class="name "><a href="dart-async/FutureRecord5.html">FutureRecord5</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T2</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T3</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T4</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T5</span>&gt;</span></span></span>)
+  
+
+</dt>
+<dd>
+  Parallel operations on a record of futures.
+</dd>
+
+          <dt id="FutureRecord6">
+  <span class="name "><a href="dart-async/FutureRecord6.html">FutureRecord6</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T2</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T3</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T4</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T5</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T6</span>&gt;</span></span></span>)
+  
+
+</dt>
+<dd>
+  Parallel operations on a record of futures.
+</dd>
+
+          <dt id="FutureRecord7">
+  <span class="name "><a href="dart-async/FutureRecord7.html">FutureRecord7</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T2</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T3</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T4</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T5</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T6</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T7</span>&gt;</span></span></span>)
+  
+
+</dt>
+<dd>
+  Parallel operations on a record of futures.
+</dd>
+
+          <dt id="FutureRecord8">
+  <span class="name "><a href="dart-async/FutureRecord8.html">FutureRecord8</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T2</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T3</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T4</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T5</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T6</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T7</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T8</span>&gt;</span></span></span>)
+  
+
+</dt>
+<dd>
+  Parallel operations on a record of futures.
+</dd>
+
+          <dt id="FutureRecord9">
+  <span class="name "><a href="dart-async/FutureRecord9.html">FutureRecord9</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T1</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T2</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T3</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T4</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T5</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T6</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T7</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T8</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T9</span>&gt;</span></span></span>)
+  
+
+</dt>
+<dd>
+  Parallel operations on a record of futures.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="runZoned" class="callable">
+  <span class="name"><a href="dart-async/runZoned.html">runZoned</a></span><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="runZoned-param-body"><span class="type-annotation">R</span> <span class="parameter-name">body</span>(), {</span><span class="parameter" id="runZoned-param-zoneValues"><span class="type-annotation"><a href="dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/Object-class.html">Object</a>?</span>, <span class="type-parameter"><a href="dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">zoneValues</span>, </span><span class="parameter" id="runZoned-param-zoneSpecification"><span class="type-annotation"><a href="dart-async/ZoneSpecification-class.html">ZoneSpecification</a>?</span> <span class="parameter-name">zoneSpecification</span>, </span><span class="parameter" id="runZoned-param-onError"><span class="type-annotation"><a href="dart-core/Function-class.html">Function</a>?</span> <span class="parameter-name">onError</span></span>})
+    <span class="returntype parameter">&#8594; R</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Runs <code>body</code> in its own zone.
+  
+
+</dd>
+
+          <dt id="runZonedGuarded" class="callable">
+  <span class="name"><a href="dart-async/runZonedGuarded.html">runZonedGuarded</a></span><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="runZonedGuarded-param-body"><span class="type-annotation">R</span> <span class="parameter-name">body</span>(), </span><span class="parameter" id="runZonedGuarded-param-onError"><span class="type-annotation">void</span> <span class="parameter-name">onError</span>(<span class="parameter" id="onError-param-error"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a></span> <span class="parameter-name">error</span>, </span><span class="parameter" id="onError-param-stack"><span class="type-annotation"><a href="dart-core/StackTrace-class.html">StackTrace</a></span> <span class="parameter-name">stack</span></span>), {</span><span class="parameter" id="runZonedGuarded-param-zoneValues"><span class="type-annotation"><a href="dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/Object-class.html">Object</a>?</span>, <span class="type-parameter"><a href="dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">zoneValues</span>, </span><span class="parameter" id="runZonedGuarded-param-zoneSpecification"><span class="type-annotation"><a href="dart-async/ZoneSpecification-class.html">ZoneSpecification</a>?</span> <span class="parameter-name">zoneSpecification</span></span>})
+    <span class="returntype parameter">&#8594; R?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Runs <code>body</code> in its own error zone.
+  
+
+</dd>
+
+          <dt id="scheduleMicrotask" class="callable">
+  <span class="name"><a href="dart-async/scheduleMicrotask.html">scheduleMicrotask</a></span><span class="signature">(<wbr><span class="parameter" id="scheduleMicrotask-param-callback"><span class="type-annotation">void</span> <span class="parameter-name">callback</span>()</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Runs a function asynchronously.
+  
+
+</dd>
+
+          <dt id="unawaited" class="callable">
+  <span class="name"><a href="dart-async/unawaited.html">unawaited</a></span><span class="signature">(<wbr><span class="parameter" id="unawaited-param-future"><span class="type-annotation"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span>?</span> <span class="parameter-name">future</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Explicitly ignores a future.
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="ControllerCallback" class="callable">
+    <span class="name"><a href="dart-async/ControllerCallback.html">ControllerCallback</a></span><span class="signature">
+      <span class="returntype parameter">= void Function<span class="signature">()</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Type of a stream controller's <code>onListen</code>, <code>onPause</code> and <code>onResume</code>
+callbacks.
+    
+
+  </dd>
+
+          
+  <dt id="ControllerCancelCallback" class="callable">
+    <span class="name"><a href="dart-async/ControllerCancelCallback.html">ControllerCancelCallback</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span> Function<span class="signature">()</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Type of stream controller <code>onCancel</code> callbacks.
+    
+
+  </dd>
+
+          
+  <dt id="CreatePeriodicTimerHandler" class="callable">
+    <span class="name"><a href="dart-async/CreatePeriodicTimerHandler.html">CreatePeriodicTimerHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/Timer-class.html">Timer</a> Function<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-period"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a></span> <span class="parameter-name">period</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-timer"><span class="type-annotation"><a href="dart-async/Timer-class.html">Timer</a></span> <span class="parameter-name">timer</span></span>)</span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/createPeriodicTimer.html">Zone.createPeriodicTimer</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="CreateTimerHandler" class="callable">
+    <span class="name"><a href="dart-async/CreateTimerHandler.html">CreateTimerHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/Timer-class.html">Timer</a> Function<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-duration"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a></span> <span class="parameter-name">duration</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>()</span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/createTimer.html">Zone.createTimer</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="ErrorCallbackHandler" class="callable">
+    <span class="name"><a href="dart-async/ErrorCallbackHandler.html">ErrorCallbackHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/AsyncError-class.html">AsyncError</a>? Function<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-error"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a></span> <span class="parameter-name">error</span>, </span><span class="parameter" id="param-stackTrace"><span class="type-annotation"><a href="dart-core/StackTrace-class.html">StackTrace</a>?</span> <span class="parameter-name">stackTrace</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/errorCallback.html">Zone.errorCallback</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="ForkHandler" class="callable">
+    <span class="name"><a href="dart-async/ForkHandler.html">ForkHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/Zone-class.html">Zone</a> Function<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-specification"><span class="type-annotation"><a href="dart-async/ZoneSpecification-class.html">ZoneSpecification</a>?</span> <span class="parameter-name">specification</span>, </span><span class="parameter" id="param-zoneValues"><span class="type-annotation"><a href="dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/Object-class.html">Object</a>?</span>, <span class="type-parameter"><a href="dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">zoneValues</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/fork.html">Zone.fork</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="HandleUncaughtErrorHandler" class="callable">
+    <span class="name"><a href="dart-async/HandleUncaughtErrorHandler.html">HandleUncaughtErrorHandler</a></span><span class="signature">
+      <span class="returntype parameter">= void Function<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-error"><span class="type-annotation"><a href="dart-core/Object-class.html">Object</a></span> <span class="parameter-name">error</span>, </span><span class="parameter" id="param-stackTrace"><span class="type-annotation"><a href="dart-core/StackTrace-class.html">StackTrace</a></span> <span class="parameter-name">stackTrace</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/handleUncaughtError.html">Zone.handleUncaughtError</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="PrintHandler" class="callable">
+    <span class="name"><a href="dart-async/PrintHandler.html">PrintHandler</a></span><span class="signature">
+      <span class="returntype parameter">= void Function<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-line"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">line</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/print.html">Zone.print</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="RegisterBinaryCallbackHandler" class="callable">
+    <span class="name"><a href="dart-async/RegisterBinaryCallbackHandler.html">RegisterBinaryCallbackHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/ZoneBinaryCallback.html">ZoneBinaryCallback</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>&gt;</span> Function&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>&gt;<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">R</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-arg1"><span class="type-annotation">T1</span> <span class="parameter-name">arg1</span>, </span><span class="parameter" id="param-arg2"><span class="type-annotation">T2</span> <span class="parameter-name">arg2</span></span>)</span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/registerBinaryCallback.html">Zone.registerBinaryCallback</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="RegisterCallbackHandler" class="callable">
+    <span class="name"><a href="dart-async/RegisterCallbackHandler.html">RegisterCallbackHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/ZoneCallback.html">ZoneCallback</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span> Function&lt;<wbr><span class="type-parameter">R</span>&gt;<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">R</span> <span class="parameter-name">f</span>()</span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/registerCallback.html">Zone.registerCallback</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="RegisterUnaryCallbackHandler" class="callable">
+    <span class="name"><a href="dart-async/RegisterUnaryCallbackHandler.html">RegisterUnaryCallbackHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="dart-async/ZoneUnaryCallback.html">ZoneUnaryCallback</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt;</span> Function&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt;<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">R</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-arg"><span class="type-annotation">T</span> <span class="parameter-name">arg</span></span>)</span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/registerUnaryCallback.html">Zone.registerUnaryCallback</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="RunBinaryHandler" class="callable">
+    <span class="name"><a href="dart-async/RunBinaryHandler.html">RunBinaryHandler</a></span><span class="signature">
+      <span class="returntype parameter">= R Function&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>&gt;<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">R</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-arg1"><span class="type-annotation">T1</span> <span class="parameter-name">arg1</span>, </span><span class="parameter" id="param-arg2"><span class="type-annotation">T2</span> <span class="parameter-name">arg2</span></span>), </span><span class="parameter" id="param-arg1"><span class="type-annotation">T1</span> <span class="parameter-name">arg1</span>, </span><span class="parameter" id="param-arg2"><span class="type-annotation">T2</span> <span class="parameter-name">arg2</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/runBinary.html">Zone.runBinary</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="RunHandler" class="callable">
+    <span class="name"><a href="dart-async/RunHandler.html">RunHandler</a></span><span class="signature">
+      <span class="returntype parameter">= R Function&lt;<wbr><span class="type-parameter">R</span>&gt;<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">R</span> <span class="parameter-name">f</span>()</span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/run.html">Zone.run</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="RunUnaryHandler" class="callable">
+    <span class="name"><a href="dart-async/RunUnaryHandler.html">RunUnaryHandler</a></span><span class="signature">
+      <span class="returntype parameter">= R Function&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt;<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">R</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-arg"><span class="type-annotation">T</span> <span class="parameter-name">arg</span></span>), </span><span class="parameter" id="param-arg"><span class="type-annotation">T</span> <span class="parameter-name">arg</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/runUnary.html">Zone.runUnary</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="ScheduleMicrotaskHandler" class="callable">
+    <span class="name"><a href="dart-async/ScheduleMicrotaskHandler.html">ScheduleMicrotaskHandler</a></span><span class="signature">
+      <span class="returntype parameter">= void Function<span class="signature">(<span class="parameter" id="param-self"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">self</span>, </span><span class="parameter" id="param-parent"><span class="type-annotation"><a href="dart-async/ZoneDelegate-class.html">ZoneDelegate</a></span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="param-zone"><span class="type-annotation"><a href="dart-async/Zone-class.html">Zone</a></span> <span class="parameter-name">zone</span>, </span><span class="parameter" id="param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>()</span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    The type of a custom <a href="dart-async/Zone/scheduleMicrotask.html">Zone.scheduleMicrotask</a> implementation function.
+    
+
+  </dd>
+
+          
+  <dt id="ZoneBinaryCallback" class="callable">
+    <span class="name"><a href="dart-async/ZoneBinaryCallback.html">ZoneBinaryCallback</a></span>&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T1</span>, <span class="type-parameter">T2</span>&gt;<span class="signature">
+      <span class="returntype parameter">= R Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">T1</span>, </span><span class="parameter" id="param-"><span class="type-annotation">T2</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    A two-argument function, like the argument to <code>Zone.runBinary</code>.
+    
+
+  </dd>
+
+          
+  <dt id="ZoneCallback" class="callable">
+    <span class="name"><a href="dart-async/ZoneCallback.html">ZoneCallback</a></span>&lt;<wbr><span class="type-parameter">R</span>&gt;<span class="signature">
+      <span class="returntype parameter">= R Function<span class="signature">()</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    A no-argument function, like the argument to <code>Zone.run</code>.
+    
+
+  </dd>
+
+          
+  <dt id="ZoneUnaryCallback" class="callable">
+    <span class="name"><a href="dart-async/ZoneUnaryCallback.html">ZoneUnaryCallback</a></span>&lt;<wbr><span class="type-parameter">R</span>, <span class="type-parameter">T</span>&gt;<span class="signature">
+      <span class="returntype parameter">= R Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">T</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    A one-argument function, like the argument to <code>Zone.runUnary</code>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="exceptions">
+      <h2>Exceptions / Errors</h2>
+      <dl>
+          <dt id="AsyncError">
+  <span class="name "><a href="dart-async/AsyncError-class.html">AsyncError</a></span> 
+
+</dt>
+<dd>
+  An error and a stack trace.
+</dd>
+
+          <dt id="DeferredLoadException">
+  <span class="name "><a href="dart-async/DeferredLoadException-class.html">DeferredLoadException</a></span> 
+
+</dt>
+<dd>
+  Thrown when a deferred library fails to load.
+</dd>
+
+          <dt id="ParallelWaitError">
+  <span class="name "><a href="dart-async/ParallelWaitError-class.html">ParallelWaitError</a><span class="signature">&lt;<wbr><span class="type-parameter">V</span>, <span class="type-parameter">E</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Error thrown when waiting for multiple futures, when some have errors.
+</dd>
+
+          <dt id="TimeoutException">
+  <span class="name "><a href="dart-async/TimeoutException-class.html">TimeoutException</a></span> 
+
+</dt>
+<dd>
+  Thrown when a scheduled timeout happens while waiting for an async result.
+</dd>
+
+      </dl>
+    </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li class="self-crumb">dart:async</li>
+</ol>
+
+    <h5><span class="package-name">Flutter</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="animation/">animation</a></li>
+      <li><a href="cupertino/">cupertino</a></li>
+      <li><a href="foundation/">foundation</a></li>
+      <li><a href="gestures/">gestures</a></li>
+      <li><a href="material/">material</a></li>
+      <li><a href="painting/">painting</a></li>
+      <li><a href="physics/">physics</a></li>
+      <li><a href="rendering/">rendering</a></li>
+      <li><a href="scheduler/">scheduler</a></li>
+      <li><a href="semantics/">semantics</a></li>
+      <li><a href="services/">services</a></li>
+      <li><a href="widget_previews/">widget_previews</a></li>
+      <li><a href="widgets/">widgets</a></li>
+      <li class="section-title">Dart</li>
+      <li><a href="dart-ui/">dart:ui</a></li>
+      <li><a href="dart-ui_web/">dart:ui_web</a></li>
+      <li class="section-subtitle">Core</li>
+        <li class="section-subitem"><a href="dart-async/">dart:async</a></li>
+        <li class="section-subitem"><a href="dart-collection/">dart:collection</a></li>
+        <li class="section-subitem"><a href="dart-convert/">dart:convert</a></li>
+        <li class="section-subitem"><a href="dart-core/">dart:core</a></li>
+        <li class="section-subitem"><a href="dart-developer/">dart:developer</a></li>
+        <li class="section-subitem"><a href="dart-math/">dart:math</a></li>
+        <li class="section-subitem"><a href="dart-typed_data/">dart:typed_data</a></li>
+      <li class="section-subtitle">VM</li>
+        <li class="section-subitem"><a href="dart-ffi/">dart:ffi</a></li>
+        <li class="section-subitem"><a href="dart-io/">dart:io</a></li>
+        <li class="section-subitem"><a href="dart-isolate/">dart:isolate</a></li>
+      <li class="section-subtitle">Web</li>
+        <li class="section-subitem">
+          <a href="https:&#47;&#47;pub.dev&#47;documentation&#47;web&#47;latest&#47;" target="_blank">
+            package:web
+            <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </li>
+        <li class="section-subitem"><a href="dart-js_interop/">dart:js_interop</a></li>
+        <li class="section-subitem"><a href="dart-js_interop_unsafe/">dart:js_interop_unsafe</a></li>
+      <li class="section-subtitle">Web (Legacy)</li>
+        <li class="section-subitem"><a class="deprecated" href="dart-html/">dart:html</a></li>
+        <li class="section-subitem"><a class="deprecated" href="dart-js/">dart:js</a></li>
+      <li class="section-title">platform_integration</li>
+      <li><a href="Android/">android</a></li>
+      <li><a href="iOS/">ios</a></li>
+      <li><a href="Linux/">linux</a></li>
+      <li><a href="macOS/">macos</a></li>
+      <li><a href="Windows/">windows</a></li>
+      <li class="section-title">flutter_test</li>
+      <li><a href="flutter_test/">flutter_test</a></li>
+      <li class="section-title">flutter_driver</li>
+      <li><a href="flutter_driver_extension/">driver_extension</a></li>
+      <li><a href="flutter_driver/">flutter_driver</a></li>
+      <li class="section-title">Flutter</li>
+      <li class="section-title">flutter_gpu</li>
+      <li><a href="flutter_gpu/">gpu</a></li>
+      <li class="section-title">flutter_localizations</li>
+      <li><a href="flutter_localizations/">flutter_localizations</a></li>
+      <li class="section-title">flutter_web_plugins</li>
+      <li><a href="flutter_web_plugins/">flutter_web_plugins</a></li>
+      <li><a href="package-flutter_web_plugins_url_strategy/">url_strategy</a></li>
+      <li class="section-title">leak_tracker_flutter_testing</li>
+      <li><a href="package-leak_tracker_flutter_testing_leak_tracker_flutter_testing/">leak_tracker_flutter_testing</a></li>
+      <li class="section-title">async</li>
+      <li><a href="package-async_async/">async</a></li>
+      <li class="section-title">boolean_selector</li>
+      <li><a href="package-boolean_selector_boolean_selector/">boolean_selector</a></li>
+      <li class="section-title">characters</li>
+      <li><a href="package-characters_characters/">characters</a></li>
+      <li class="section-title">clock</li>
+      <li><a href="package-clock_clock/">clock</a></li>
+      <li class="section-title">collection</li>
+      <li><a class="deprecated" href="package-collection_algorithms/">algorithms</a></li>
+      <li><a href="package-collection_collection/">collection</a></li>
+      <li><a class="deprecated" href="package-collection_equality/">equality</a></li>
+      <li><a class="deprecated" href="package-collection_iterable_zip/">iterable_zip</a></li>
+      <li><a class="deprecated" href="package-collection_priority_queue/">priority_queue</a></li>
+      <li><a class="deprecated" href="package-collection_wrappers/">wrappers</a></li>
+      <li class="section-title">crypto</li>
+      <li><a href="package-crypto_crypto/">crypto</a></li>
+      <li class="section-title">fake_async</li>
+      <li><a href="package-fake_async_fake_async/">fake_async</a></li>
+      <li class="section-title">file</li>
+      <li><a href="package-file_chroot/">chroot</a></li>
+      <li><a href="package-file_file/">file</a></li>
+      <li><a href="package-file_local/">local</a></li>
+      <li><a href="package-file_memory/">memory</a></li>
+      <li class="section-title">integration_test</li>
+      <li><a href="package-integration_test_common/">common</a></li>
+      <li><a href="package-integration_test_integration_test/">integration_test</a></li>
+      <li><a href="package-integration_test_integration_test_driver/">integration_test_driver</a></li>
+      <li><a href="package-integration_test_integration_test_driver_extended/">integration_test_driver_extended</a></li>
+      <li class="section-title">intl</li>
+      <li><a href="package-intl_date_symbol_data_custom/">date_symbol_data_custom</a></li>
+      <li><a href="package-intl_date_symbol_data_file/">date_symbol_data_file</a></li>
+      <li><a href="package-intl_date_symbol_data_http_request/">date_symbol_data_http_request</a></li>
+      <li><a href="package-intl_date_symbol_data_local/">date_symbol_data_local</a></li>
+      <li><a href="package-intl_date_symbols/">date_symbols</a></li>
+      <li><a href="package-intl_date_time_patterns/">date_time_patterns</a></li>
+      <li><a href="package-intl_find_locale/">find_locale</a></li>
+      <li><a href="package-intl_intl/">intl</a></li>
+      <li><a href="package-intl_intl_default/">intl_default</a></li>
+      <li><a href="package-intl_intl_standalone/">intl_standalone</a></li>
+      <li><a href="package-intl_locale/">locale</a></li>
+      <li><a href="package-intl_message_format/">message_format</a></li>
+      <li><a href="package-intl_message_lookup_by_library/">message_lookup_by_library</a></li>
+      <li><a href="package-intl_number_symbols/">number_symbols</a></li>
+      <li><a href="package-intl_number_symbols_data/">number_symbols_data</a></li>
+      <li class="section-title">leak_tracker</li>
+      <li><a href="package-leak_tracker_leak_tracker/">leak_tracker</a></li>
+      <li class="section-title">leak_tracker_testing</li>
+      <li><a href="package-leak_tracker_testing_leak_tracker_testing/">leak_tracker_testing</a></li>
+      <li class="section-title">matcher</li>
+      <li><a href="package-matcher_expect/">expect</a></li>
+      <li><a href="package-matcher_matcher/">matcher</a></li>
+      <li class="section-title">material_color_utilities</li>
+      <li><a href="package-material_color_utilities_blend_blend/">blend/blend</a></li>
+      <li><a href="package-material_color_utilities_contrast_contrast/">contrast/contrast</a></li>
+      <li><a href="package-material_color_utilities_dislike_dislike_analyzer/">dislike/dislike_analyzer</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_dynamic_color/">dynamiccolor/dynamic_color</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_dynamic_scheme/">dynamiccolor/dynamic_scheme</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_material_dynamic_colors/">dynamiccolor/material_dynamic_colors</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_src_contrast_curve/">dynamiccolor/src/contrast_curve</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_src_tone_delta_pair/">dynamiccolor/src/tone_delta_pair</a></li>
+      <li><a href="package-material_color_utilities_dynamiccolor_variant/">dynamiccolor/variant</a></li>
+      <li><a href="package-material_color_utilities_hct_cam16/">hct/cam16</a></li>
+      <li><a href="package-material_color_utilities_hct_hct/">hct/hct</a></li>
+      <li><a href="package-material_color_utilities_hct_src_hct_solver/">hct/src/hct_solver</a></li>
+      <li><a href="package-material_color_utilities_hct_viewing_conditions/">hct/viewing_conditions</a></li>
+      <li><a href="package-material_color_utilities_material_color_utilities/">material_color_utilities</a></li>
+      <li><a href="package-material_color_utilities_palettes_core_palette/">palettes/core_palette</a></li>
+      <li><a href="package-material_color_utilities_palettes_core_palettes/">palettes/core_palettes</a></li>
+      <li><a href="package-material_color_utilities_palettes_tonal_palette/">palettes/tonal_palette</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer/">quantize/quantizer</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_celebi/">quantize/quantizer_celebi</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_map/">quantize/quantizer_map</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_wsmeans/">quantize/quantizer_wsmeans</a></li>
+      <li><a href="package-material_color_utilities_quantize_quantizer_wu/">quantize/quantizer_wu</a></li>
+      <li><a href="package-material_color_utilities_quantize_src_point_provider/">quantize/src/point_provider</a></li>
+      <li><a href="package-material_color_utilities_quantize_src_point_provider_lab/">quantize/src/point_provider_lab</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme/">scheme/scheme</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_content/">scheme/scheme_content</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_expressive/">scheme/scheme_expressive</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_fidelity/">scheme/scheme_fidelity</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_fruit_salad/">scheme/scheme_fruit_salad</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_monochrome/">scheme/scheme_monochrome</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_neutral/">scheme/scheme_neutral</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_rainbow/">scheme/scheme_rainbow</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_tonal_spot/">scheme/scheme_tonal_spot</a></li>
+      <li><a href="package-material_color_utilities_scheme_scheme_vibrant/">scheme/scheme_vibrant</a></li>
+      <li><a href="package-material_color_utilities_score_score/">score/score</a></li>
+      <li><a href="package-material_color_utilities_temperature_temperature_cache/">temperature/temperature_cache</a></li>
+      <li><a href="package-material_color_utilities_utils_color_utils/">utils/color_utils</a></li>
+      <li><a href="package-material_color_utilities_utils_math_utils/">utils/math_utils</a></li>
+      <li><a href="package-material_color_utilities_utils_string_utils/">utils/string_utils</a></li>
+      <li class="section-title">meta</li>
+      <li><a href="meta_dart2js/">dart2js</a></li>
+      <li><a href="meta/">meta</a></li>
+      <li><a href="meta_meta/">meta_meta</a></li>
+      <li class="section-title">path</li>
+      <li><a href="package-path_path/">path</a></li>
+      <li class="section-title">platform</li>
+      <li><a href="package-platform_platform/">platform</a></li>
+      <li class="section-title">process</li>
+      <li><a href="package-process_process/">process</a></li>
+      <li class="section-title">source_span</li>
+      <li><a href="package-source_span_source_span/">source_span</a></li>
+      <li class="section-title">stack_trace</li>
+      <li><a href="package-stack_trace_stack_trace/">stack_trace</a></li>
+      <li class="section-title">stream_channel</li>
+      <li><a href="package-stream_channel_isolate_channel/">isolate_channel</a></li>
+      <li><a href="package-stream_channel_stream_channel/">stream_channel</a></li>
+      <li class="section-title">string_scanner</li>
+      <li><a href="package-string_scanner_string_scanner/">string_scanner</a></li>
+      <li class="section-title">sync_http</li>
+      <li><a href="sync.http/">sync_http</a></li>
+      <li class="section-title">term_glyph</li>
+      <li><a href="package-term_glyph_term_glyph/">term_glyph</a></li>
+      <li class="section-title">test_api</li>
+      <li><a href="package-test_api_backend/">backend</a></li>
+      <li><a class="deprecated" href="package-test_api_fake/">fake</a></li>
+      <li><a href="package-test_api_hooks/">hooks</a></li>
+      <li><a href="package-test_api_hooks_testing/">hooks_testing</a></li>
+      <li><a href="package-test_api_scaffolding/">scaffolding</a></li>
+      <li><a class="deprecated" href="package-test_api_test_api/">test_api</a></li>
+      <li class="section-title">typed_data</li>
+      <li><a href="package-typed_data_typed_buffers/">typed_buffers</a></li>
+      <li><a href="package-typed_data_typed_data/">typed_data</a></li>
+      <li class="section-title">vector_math</li>
+      <li><a class="deprecated" href="package-vector_math_hash/">hash</a></li>
+      <li><a href="package-vector_math_vector_math/">vector_math</a></li>
+      <li><a href="package-vector_math_vector_math_64/">vector_math_64</a></li>
+      <li><a href="package-vector_math_vector_math_geometry/">vector_math_geometry</a></li>
+      <li><a href="package-vector_math_vector_math_lists/">vector_math_lists</a></li>
+      <li><a href="package-vector_math_vector_math_operations/">vector_math_operations</a></li>
+      <li class="section-title">vm_service</li>
+      <li><a href="package-vm_service_utils/">utils</a></li>
+      <li><a href="vm_service/">vm_service</a></li>
+      <li><a href="package-vm_service_vm_service_io/">vm_service_io</a></li>
+      <li class="section-title">webdriver</li>
+      <li><a href="package-webdriver_async_core/">async_core</a></li>
+      <li><a href="package-webdriver_async_html/">async_html</a></li>
+      <li><a href="package-webdriver_async_io/">async_io</a></li>
+      <li><a class="deprecated" href="core/">core</a></li>
+      <li><a class="deprecated" href="io/">io</a></li>
+      <li><a href="package-webdriver_support_async/">support/async</a></li>
+      <li><a href="package-webdriver_support_firefox_profile/">support/firefox_profile</a></li>
+      <li><a href="package-webdriver_support_stdio_stepper/">support/stdio_stepper</a></li>
+      <li><a href="package-webdriver_sync_core/">sync_core</a></li>
+      <li><a href="package-webdriver_sync_io/">sync_io</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>dart:async library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+

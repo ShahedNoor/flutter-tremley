@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the supportedLocales property from the PreviewLocalizationsData class, for the Dart programming language.">
+  <title>supportedLocales property - PreviewLocalizationsData class - widget_previews library - Dart API</title>
+
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../../">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  <!-- style overrides for dartdoc -->
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Google+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:500,400italic,300,400,100i';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round';
+</style>
+
+<link href="https://flutter.github.io/assets-for-api-docs/assets/cupertino/cupertino.css" rel="stylesheet" type="text/css">
+
+<link href="../assets/overrides.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Rule for sizing the icon. */
+  .md-36 { font-size: 36px; }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
+<!-- End Google Tag Manager -->
+<!-- Cookie Banner -->
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css">
+<!-- End Cookie Banner -->
+
+<script async="" defer="" src="../assets/api_survey.js"></script>
+
+<!-- Styles and scripting for handling custom code snippets -->
+<link href="../assets/snippets.css" rel="stylesheet" type="text/css">
+<script src="../assets/snippets.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" title="Flutter API" href="/opensearch.xml"/>
+
+</head>
+
+<body data-base-href="../../" data-using-base-href="true" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="widget_previews/">widget_previews.dart</a></li>
+    <li><a href="widget_previews/PreviewLocalizationsData-class.html">PreviewLocalizationsData</a></li>
+    <li class="self-crumb">supportedLocales property</li>
+  </ol>
+  <div class="self-name">supportedLocales</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="widget_previews&#47;PreviewLocalizationsData-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://github.com/flutter/flutter/blob/main/packages/flutter/lib/src/widget_previews/widget_previews.dart#L365"><span class="material-symbols-outlined">description</span></a></div>
+<h1><span class="kind-property">supportedLocales</span> property 
+</h1></div>
+
+    
+      <section class="multi-line-signature">
+        
+        <a href="dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-ui/Locale-class.html">Locale</a></span>&gt;</span>
+        <span class="name ">supportedLocales</span>
+        <div class="features"><span class="feature">final</span></div>
+
+      </section>
+      
+<section class="desc markdown">
+  <p>The list of locales that this app has been localized for.</p>
+<p>By default only the American English locale is supported. Apps should
+configure this list to match the locales they support.</p>
+<p>This list must not null. Its default value is just
+<code>[const Locale('en', 'US')]</code>.</p>
+<p>The order of the list matters. The default locale resolution algorithm,
+<a href="widgets/basicLocaleListResolution.html">basicLocaleListResolution</a>, attempts to match by the following priority:</p>
+<ol>
+<li><a href="dart-ui/Locale/languageCode.html">Locale.languageCode</a>, <a href="dart-ui/Locale/scriptCode.html">Locale.scriptCode</a>, and <a href="dart-ui/Locale/countryCode.html">Locale.countryCode</a></li>
+<li><a href="dart-ui/Locale/languageCode.html">Locale.languageCode</a> and <a href="dart-ui/Locale/scriptCode.html">Locale.scriptCode</a> only</li>
+<li><a href="dart-ui/Locale/languageCode.html">Locale.languageCode</a> and <a href="dart-ui/Locale/countryCode.html">Locale.countryCode</a> only</li>
+<li><a href="dart-ui/Locale/languageCode.html">Locale.languageCode</a> only</li>
+<li><a href="dart-ui/Locale/countryCode.html">Locale.countryCode</a> only when all preferred locales fail to match</li>
+<li>Returns the first element of <a href="widget_previews/PreviewLocalizationsData/supportedLocales.html">supportedLocales</a> as a fallback</li>
+</ol>
+<p>When more than one supported locale matches one of these criteria, only
+the first matching locale is returned.</p>
+<p>The default locale resolution algorithm can be overridden by providing a
+value for <a href="widget_previews/PreviewLocalizationsData/localeListResolutionCallback.html">localeListResolutionCallback</a>. The provided
+<a href="widgets/basicLocaleListResolution.html">basicLocaleListResolution</a> is optimized for speed and does not implement
+a full algorithm (such as the one defined in
+<a href="https://unicode.org/reports/tr35/#LanguageMatching">Unicode TR35</a>) that
+takes distances between languages into account.</p>
+<p>When supporting languages with more than one script, it is recommended
+to specify the <a href="dart-ui/Locale/scriptCode.html">Locale.scriptCode</a> explicitly. Locales may also be defined without
+<a href="dart-ui/Locale/countryCode.html">Locale.countryCode</a> to specify a generic fallback for a particular script.</p>
+<p>A fully supported language with multiple scripts should define a generic language-only
+locale (e.g. 'zh'), language+script only locales (e.g. 'zh_Hans' and 'zh_Hant'),
+and any language+script+country locales (e.g. 'zh_Hans_CN'). Fully defining all of
+these locales as supported is not strictly required but allows for proper locale resolution in
+the most number of cases. These locales can be specified with the <a href="dart-ui/Locale/Locale.fromSubtags.html">Locale.fromSubtags</a>
+constructor:</p>
+<pre class="language-dart"><code class="language-dart">// Full Chinese support for CN, TW, and HK
+supportedLocales: &lt;Locale&gt;[
+  const Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
+],
+</code></pre>
+<p>Omitting some these fallbacks may result in improperly resolved
+edge-cases, for example, a simplified Chinese user in Taiwan ('zh_Hans_TW')
+may resolve to traditional Chinese if 'zh_Hans' and 'zh_Hans_CN' are
+omitted.</p>
+<p>See also:</p>
+<ul>
+<li><a href="widget_previews/PreviewLocalizationsData/localeResolutionCallback.html">localeResolutionCallback</a>, an app callback that resolves the app's locale
+when the device's locale changes.</li>
+<li><a href="widget_previews/PreviewLocalizationsData/localizationsDelegates.html">localizationsDelegates</a>, which collectively define all of the localized
+resources used by this app.</li>
+<li><a href="widgets/basicLocaleListResolution.html">basicLocaleListResolution</a>, the default locale resolution algorithm.</li>
+</ul>
+</section>
+
+      
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">final List&lt;Locale&gt; supportedLocales;</code></pre>
+</section>
+
+
+    
+</div> <!-- /.main-content -->
+<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="index.html">Flutter</a></li>
+    <li><a href="widget_previews/">widget_previews</a></li>
+    <li><a href="widget_previews/PreviewLocalizationsData-class.html">PreviewLocalizationsData</a></li>
+    <li class="self-crumb">supportedLocales property</li>
+</ol>
+
+  <h5>PreviewLocalizationsData class</h5>
+  <div id="dartdoc-sidebar-left-content"></div>
+</div><!--/.sidebar-offcanvas-->
+<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    Flutter
+      0.0.0
+  </span>
+  <script src="footer.js"></script>
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Cookie Banner -->
+<div class="glue-footer"></div>
+<button aria-hidden="true" class="glue-footer__link glue-cookie-notification-bar-control">Cookies management controls</button>
+<script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2B"></script>
+<!-- End Cookie Banner -->
+
+</body>
+</html>
+
