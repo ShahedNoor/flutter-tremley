@@ -1,6 +1,6 @@
 # 💈 Tremley Customer App
 
-A modern, high-performance Flutter mobile application for **On-Demand Barber & Salon Booking** built with **Feature-Based Clean Architecture**, **RxDart Reactive State Management**, and **GetIt Dependency Injection**.
+A modern, scalable Flutter mobile application for **On-Demand Barber & Salon Booking** built with **Feature-Based Clean Architecture**, **RxDart Reactive State Management**, and **GetIt Dependency Injection**.
 
 ---
 
@@ -9,7 +9,7 @@ A modern, high-performance Flutter mobile application for **On-Demand Barber & S
 - [Overview](#-overview)
 - [Key Features](#-key-features)
 - [Architecture & Design Patterns](#-architecture--design-patterns)
-- [Project Structure](#-project-structure)
+- [Project Directory Structure](#-project-directory-structure)
 - [Technology Stack](#️-technology-stack)
 - [Getting Started & Configuration](#-getting-started--configuration)
   - [Prerequisites](#prerequisites)
@@ -100,9 +100,9 @@ The codebase follows **Feature-Based Clean Architecture** combined with **MVVM-i
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Directory Structure
 
-```
+```text
 flutter-tremley/
 ├── lib/
 │   ├── common_widgets/              # Global reusable UI components
