@@ -70,26 +70,49 @@ A modern, scalable Flutter mobile application for **On-Demand Barber & Salon Boo
 
 The codebase follows **Feature-Based Clean Architecture** combined with **MVVM-inspired reactive streams**.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    PRESENTATION LAYER                       │
-│       (Screens, Custom Widgets, Form Validation)            │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────────┐
-│                  REACTIVE LAYER (Rx)                        │
-│           (BehaviorSubjects, Streams, Transformers)         │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────────┐
-│                    DATA & REPO LAYER                        │
-│       (API Clients, Response Parsers, Local Storage)        │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────────┐
-│                    NETWORK LAYER                            │
-│     (Dio Client, Auth Interceptors, Error Handling)         │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Presentation["🎨 Presentation Layer"]
+        UI["Flutter UI Screens & Widgets"]
+        FORM["Form Validation & Controllers"]
+        RESP["Responsive UI (ScreenUtil)"]
+    end
+
+    subgraph Reactive["⚡ Reactive State Layer (Rx)"]
+        RX["RxDart BehaviorSubjects"]
+        STREAM["Data Streams & Transformers"]
+    end
+
+    subgraph Data["📦 Data & Repository Layer"]
+        REPO["Feature Repositories & APIs"]
+        MODELS["Typed Data Models & Parsers"]
+        STORAGE["Local Storage (GetStorage)"]
+    end
+
+    subgraph Network["🌐 Network & Core Layer"]
+        DIO["Dio HTTP Client"]
+        AUTH["Auth & Token Interceptors"]
+        ERR["Error Handlers & Logger"]
+        DI["GetIt Service Locator"]
+    end
+
+    subgraph External["☁️ External Services & APIs"]
+        API["Tremley Backend REST API"]
+        FCM["Firebase Cloud Messaging"]
+        MAPS["Google Maps / Apple Maps"]
+    end
+
+    UI -->|Dispatches User Actions| RX
+    RX -->|Streams State Updates via StreamBuilder| UI
+    RX -->|Invokes Data Fetch / Mutation| REPO
+    REPO -->|Reads / Writes Session & Cache| STORAGE
+    REPO -->|Executes HTTP Requests| DIO
+    DIO -->|Applies Headers & Auth Interceptors| AUTH
+    DIO -->|Standardizes Exceptions| ERR
+    DIO -->|REST Endpoints| API
+    UI -->|Renders Geolocation & Routing| MAPS
+    External -->|Push Notifications| FCM
+    FCM -->|Delivers In-App Alerts| UI
 ```
 
 ### Core Architecture Highlights:
